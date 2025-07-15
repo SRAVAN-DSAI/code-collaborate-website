@@ -24,7 +24,7 @@ const Hero = () => {
             </p>
           </div>
           
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3">
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
               <a href="#projects" className="flex items-center">
                 View My Work
