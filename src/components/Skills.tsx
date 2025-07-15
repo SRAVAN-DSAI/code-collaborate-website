@@ -5,29 +5,29 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Frontend Development',
-      skills: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Next.js', 'Vue.js', 'SASS/SCSS']
+      title: 'Programming & Data Analysis',
+      skills: ['Python', 'SQL', 'Data Analysis', 'Machine Learning', 'Deep Learning', 'Automation']
     },
     {
-      title: 'Backend Development',
-      skills: ['Node.js', 'Express.js', 'Python', 'Django', 'FastAPI', 'PHP', 'Laravel', 'REST APIs', 'GraphQL']
+      title: 'ML/DL Frameworks',
+      skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Keras', 'Neural Networks', 'Model Development']
     },
     {
-      title: 'Database & Cloud',
-      skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'AWS', 'Google Cloud', 'Docker', 'Kubernetes', 'Firebase']
+      title: 'Data Visualization & Big Data',
+      skills: ['Plotly', 'Matplotlib', 'Seaborn', 'PySpark', 'Big Data Processing', 'Dashboard Creation']
     },
     {
-      title: 'Tools & Others',
-      skills: ['Git', 'GitHub', 'VS Code', 'Figma', 'Postman', 'Jest', 'Cypress', 'Linux', 'Agile/Scrum']
+      title: 'Cloud & Tools',
+      skills: ['AWS', 'S3', 'EC2', 'Git', 'Version Control', 'Cloud Computing', 'Collaboration']
     }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="skills" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills & Technologies</h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Here are the technologies and tools I work with to bring ideas to life.
+          Here are the technologies and tools I use to transform data into insights and build intelligent solutions.
         </p>
       </div>
 

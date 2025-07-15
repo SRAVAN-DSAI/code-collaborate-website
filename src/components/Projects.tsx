@@ -7,67 +7,73 @@ import { Badge } from '@/components/ui/badge';
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
-      github: '#',
+      title: 'Housing Market Analysis - Mexico',
+      description: 'Comprehensive analysis of Mexico\'s housing market using machine learning techniques to predict property values and market trends.',
+      image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80',
+      technologies: ['Python', 'Machine Learning', 'Data Analysis', 'Pandas', 'Scikit-learn'],
+      github: 'https://github.com/sravan-dsai/housing-mexico',
       live: '#',
+      category: 'ML Data',
       featured: true
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Firebase', 'Material-UI', 'Socket.io'],
-      github: '#',
+      title: 'Apartment Price Prediction - Buenos Aires',
+      description: 'Machine learning model to predict apartment prices in Buenos Aires using regression techniques and feature engineering.',
+      image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80',
+      technologies: ['Python', 'Machine Learning', 'Regression', 'Feature Engineering'],
+      github: 'https://github.com/sravan-dsai/apartment-sales',
       live: '#',
+      category: 'ML',
       featured: true
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application that provides current weather data and forecasts using OpenWeatherMap API with beautiful data visualizations.',
-      image: '/placeholder.svg',
-      technologies: ['JavaScript', 'Chart.js', 'OpenWeatherMap API', 'CSS3'],
-      github: '#',
+      title: 'Air Quality Forecasting - Nairobi',
+      description: 'Time series forecasting model to predict air quality in Nairobi using environmental data and machine learning algorithms.',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80',
+      technologies: ['Python', 'Time Series', 'Forecasting', 'Environmental Data'],
+      github: 'https://github.com/sravan-dsai/air-quality-nairobi',
       live: '#',
+      category: 'ML',
       featured: false
     },
     {
-      title: 'Blog Platform',
-      description: 'A modern blogging platform with markdown support, user authentication, and content management system built with Next.js.',
-      image: '/placeholder.svg',
-      technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-      github: '#',
+      title: 'Neural Network Car Price Prediction',
+      description: 'Deep learning approach using neural networks to predict car prices with advanced feature selection and model optimization.',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80',
+      technologies: ['Python', 'Deep Learning', 'Neural Networks', 'TensorFlow', 'PyTorch'],
+      github: 'https://github.com/sravan-dsai/car-price-prediction',
       live: '#',
+      category: 'DL',
       featured: false
     },
     {
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website showcasing my work and skills, built with modern web technologies and optimized for performance.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      github: '#',
+      title: 'Customer Segmentation Dashboard',
+      description: 'Interactive dashboard for customer segmentation analysis using clustering algorithms and data visualization techniques.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80',
+      technologies: ['Python', 'Clustering', 'Data Visualization', 'Plotly', 'Dashboard'],
+      github: 'https://github.com/sravan-dsai/customer-segmentation',
       live: '#',
+      category: 'Data',
       featured: false
     },
     {
-      title: 'Chat Application',
-      description: 'Real-time chat application with private messaging, group chats, and file sharing capabilities using Socket.io and React.',
-      image: '/placeholder.svg',
-      technologies: ['React', 'Socket.io', 'Node.js', 'Express', 'MongoDB'],
-      github: '#',
+      title: 'Bankruptcy Risk Assessment',
+      description: 'Predictive model to assess bankruptcy risk for Polish companies using financial indicators and machine learning classification.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80',
+      technologies: ['Python', 'Classification', 'Risk Assessment', 'Financial Analysis'],
+      github: 'https://github.com/sravan-dsai/bankruptcy-poland',
       live: '#',
+      category: 'ML',
       featured: false
     }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Here are some of my recent projects that showcase my skills and experience in web development.
+          Here are some of my recent projects that showcase my expertise in data science, machine learning, and deep learning.
         </p>
       </div>
 
@@ -86,11 +92,14 @@ const Projects = () => {
                   Featured
                 </div>
               )}
+              <div className="absolute top-3 left-3 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                {project.category}
+              </div>
             </div>
             
             <CardHeader>
               <CardTitle className="text-xl text-gray-900">{project.title}</CardTitle>
-              <CardDescription className="text-sm text-gray-600 line-clamp-2">
+              <CardDescription className="text-sm text-gray-600 line-clamp-3">
                 {project.description}
               </CardDescription>
             </CardHeader>
@@ -105,13 +114,17 @@ const Projects = () => {
               </div>
 
               <div className="flex space-x-3">
-                <Button variant="outline" size="sm" className="flex-1">
-                  <Github className="h-4 w-4 mr-2" />
-                  Code
+                <Button variant="outline" size="sm" className="flex-1" asChild>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4 mr-2" />
+                    View Code
+                  </a>
                 </Button>
-                <Button size="sm" className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Live Demo
+                <Button size="sm" className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600" asChild>
+                  <a href={project.live} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Live Demo
+                  </a>
                 </Button>
               </div>
             </CardContent>
@@ -120,9 +133,11 @@ const Projects = () => {
       </div>
 
       <div className="text-center mt-12">
-        <Button variant="outline" size="lg">
-          View All Projects
-          <ArrowRight className="ml-2 h-5 w-5" />
+        <Button variant="outline" size="lg" asChild>
+          <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
+            View All Projects
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
         </Button>
       </div>
     </div>

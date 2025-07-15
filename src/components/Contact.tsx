@@ -8,31 +8,31 @@ import { Textarea } from '@/components/ui/textarea';
 const Contact = () => {
   const contactInfo = [
     {
-      icon: Mail,
-      label: 'Email',
-      value: 'sravan@example.com',
-      href: 'mailto:sravan@example.com'
-    },
-    {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+91 8374147548',
+      href: 'tel:+918374147548'
+    },
+    {
+      icon: Mail,
+      label: 'Email',
+      value: 'sravankodari4@gmail.com',
+      href: 'mailto:sravankodari4@gmail.com'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'New York, NY',
+      value: 'Hyderabad, India',
       href: '#'
     }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="contact" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
         <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-          Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.
+          Ready to collaborate on data science projects? Let's discuss how we can work together to turn your data into valuable insights.
         </p>
       </div>
 
@@ -42,8 +42,8 @@ const Contact = () => {
           <div>
             <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
             <p className="text-blue-100 mb-8">
-              I'm always interested in hearing about new opportunities and exciting projects. 
-              Whether you have a question or just want to say hi, feel free to reach out!
+              I'm always interested in hearing about new opportunities and exciting data science projects. 
+              Whether you have a question about machine learning, need help with data analysis, or just want to say hi, feel free to reach out!
             </p>
           </div>
 
@@ -67,13 +67,13 @@ const Contact = () => {
           </div>
 
           <div className="pt-8">
-            <h4 className="text-lg font-semibold text-white mb-4">Why Work With Me?</h4>
+            <h4 className="text-lg font-semibold text-white mb-4">What I Bring:</h4>
             <ul className="space-y-2 text-blue-100">
-              <li>• 3+ years of professional experience</li>
-              <li>• Full-stack development expertise</li>
-              <li>• Responsive and modern designs</li>
-              <li>• Clean, maintainable code</li>
-              <li>• Timely project delivery</li>
+              <li>• Advanced Machine Learning & Deep Learning expertise</li>
+              <li>• Data Science and Analytics experience</li>
+              <li>• Python, PyTorch, TensorFlow proficiency</li>
+              <li>• Cloud computing with AWS</li>
+              <li>• Research-oriented approach to problem solving</li>
             </ul>
           </div>
         </div>
@@ -86,64 +86,51 @@ const Contact = () => {
               Fill out the form below and I'll get back to you as soon as possible.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <CardContent>
+            <form action="https://formspree.io/f/mvgrzqoj" method="POST" className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
-                  First Name
+                  Name
                 </label>
                 <Input 
-                  placeholder="John" 
+                  name="name"
+                  placeholder="Your Name" 
+                  required
                   className="bg-white/10 border-white/20 text-white placeholder:text-blue-200"
                 />
               </div>
+
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
-                  Last Name
+                  Email
                 </label>
                 <Input 
-                  placeholder="Doe" 
+                  type="email" 
+                  name="email"
+                  placeholder="your@email.com" 
+                  required
                   className="bg-white/10 border-white/20 text-white placeholder:text-blue-200"
                 />
               </div>
-            </div>
 
-            <div>
-              <label className="block text-sm font-medium text-white mb-2">
-                Email
-              </label>
-              <Input 
-                type="email" 
-                placeholder="john@example.com" 
-                className="bg-white/10 border-white/20 text-white placeholder:text-blue-200"
-              />
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-white mb-2">
+                  Message
+                </label>
+                <Textarea 
+                  name="message"
+                  placeholder="Tell me about your project or how I can help..." 
+                  rows={4}
+                  required
+                  className="bg-white/10 border-white/20 text-white placeholder:text-blue-200"
+                />
+              </div>
 
-            <div>
-              <label className="block text-sm font-medium text-white mb-2">
-                Subject
-              </label>
-              <Input 
-                placeholder="Project inquiry" 
-                className="bg-white/10 border-white/20 text-white placeholder:text-blue-200"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-white mb-2">
-                Message
-              </label>
-              <Textarea 
-                placeholder="Tell me about your project..." 
-                rows={4}
-                className="bg-white/10 border-white/20 text-white placeholder:text-blue-200"
-              />
-            </div>
-
-            <Button className="w-full bg-white text-blue-600 hover:bg-blue-50">
-              <Send className="h-4 w-4 mr-2" />
-              Send Message
-            </Button>
+              <Button type="submit" className="w-full bg-white text-blue-600 hover:bg-blue-50">
+                <Send className="h-4 w-4 mr-2" />
+                Send Message
+              </Button>
+            </form>
           </CardContent>
         </Card>
       </div>

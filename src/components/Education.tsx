@@ -6,53 +6,65 @@ import { Badge } from '@/components/ui/badge';
 const Education = () => {
   const education = [
     {
-      degree: 'Bachelor of Technology in Computer Science',
-      institution: 'Tech University',
+      degree: 'M.Tech. Aerospace Engineering',
+      institution: 'Indian Institute of Technology Bombay',
       location: 'Mumbai, India',
-      period: '2017 - 2021',
-      grade: 'CGPA: 8.5/10',
-      description: 'Specialized in Software Engineering and Web Development. Active member of coding club and tech societies.',
+      period: '2024 - 2026',
+      grade: 'Ongoing',
+      description: 'Pursuing advanced studies with focus on computational methods and data-driven approaches in aerospace engineering.',
       achievements: [
-        'Dean\'s List for 3 consecutive semesters',
-        'Best Project Award for Final Year Project',
-        'Led University Coding Club'
+        'Advanced Machine Learning applications',
+        'Numerical Methods and Computational Fluid Dynamics',
+        'Data-Driven Design methodologies',
+        'Research in ML applications for aerospace systems'
+      ]
+    },
+    {
+      degree: 'B.Tech. Civil Engineering',
+      institution: 'Sreenidhi Institute of Science & Technology',
+      location: 'Hyderabad, India',
+      period: '2019 - 2023',
+      grade: 'Graduated',
+      description: 'Built strong foundation in analytical thinking, problem-solving, and quantitative methods essential for data science.',
+      achievements: [
+        'Strong analytical and problem-solving skills',
+        'Quantitative methods and statistical analysis',
+        'Mathematical modeling and computational thinking',
+        'Engineering principles applied to data problems'
       ]
     }
   ];
 
   const certifications = [
     {
-      name: 'AWS Certified Solutions Architect',
-      issuer: 'Amazon Web Services',
-      date: '2023',
-      credentialId: 'AWS-CSA-2023-001'
+      name: 'Applied Data Science Lab',
+      issuer: 'WorldQuant University',
+      date: 'June 2025',
+      credentialId: 'WQU-ADSL-2025',
+      credentialUrl: 'https://www.credly.com/badges/8e07e8f3-8c91-4462-b350-0e0dc9caba5f'
     },
     {
-      name: 'Google Cloud Professional Developer',
-      issuer: 'Google Cloud',
-      date: '2022',
-      credentialId: 'GCP-PD-2022-156'
+      name: 'Deep Learning for Computer Vision',
+      issuer: 'WorldQuant University',
+      date: 'April 2025',
+      credentialId: 'WQU-DLCV-2025',
+      credentialUrl: 'https://www.credly.com/badges/cfcd0d66-6e06-4797-899f-8989b851f672'
     },
     {
-      name: 'Meta Frontend Developer Professional',
-      issuer: 'Meta (Facebook)',
-      date: '2022',
-      credentialId: 'META-FE-2022-789'
-    },
-    {
-      name: 'MongoDB Developer Certification',
-      issuer: 'MongoDB University',
-      date: '2021',
-      credentialId: 'MDB-DEV-2021-234'
+      name: 'Artificial Intelligence Foundations',
+      issuer: 'Teachnook x IIT Roorkee',
+      date: 'August 2024',
+      credentialId: 'TN-IITK-AI-2024',
+      credentialUrl: 'https://drive.google.com/file/d/1mytswfPrwDrPbP1bqcsMsIB6VTrLLQb8/view?usp=drive_link'
     }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="education" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Education & Certifications</h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          My academic background and professional certifications that keep me up-to-date with industry standards.
+          My academic journey and professional certifications that keep me updated with the latest in data science and AI.
         </p>
       </div>
 
@@ -84,7 +96,7 @@ const Education = () => {
                 <p className="text-gray-600">{edu.description}</p>
                 
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Key Achievements:</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">Focus Areas:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600">
                     {edu.achievements.map((achievement, achIndex) => (
                       <li key={achIndex}>{achievement}</li>
@@ -103,7 +115,7 @@ const Education = () => {
             Certifications
           </h3>
           
-          <div className="space-y-4">
+          <div id="certifications" className="space-y-4">
             {certifications.map((cert, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
@@ -114,7 +126,17 @@ const Education = () => {
                     </Badge>
                   </div>
                   <p className="text-blue-600 font-medium mb-1">{cert.issuer}</p>
-                  <p className="text-xs text-gray-500">Credential ID: {cert.credentialId}</p>
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs text-gray-500">Credential ID: {cert.credentialId}</p>
+                    <a 
+                      href={cert.credentialUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-xs text-blue-600 hover:text-blue-800 underline"
+                    >
+                      View Credential
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             ))}
