@@ -64,9 +64,9 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 bg-white/50">
+{/*       <section className="py-20 bg-white/50">
         <Experience />
-      </section>
+      </section> */}
 
       {/* Education Section */}
       <section className="py-20">
