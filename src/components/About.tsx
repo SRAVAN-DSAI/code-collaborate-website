@@ -4,10 +4,10 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const About = () => {
   const stats = [
-    { icon: Code, label: 'Projects Completed', value: '50+' },
-    { icon: Briefcase, label: 'Years Experience', value: '3+' },
-    { icon: GraduationCap, label: 'Certifications', value: '8' },
-    { icon: Award, label: 'Awards Won', value: '5' },
+    { icon: Code, label: 'Projects Completed', value: '10+' },
+    { icon: Briefcase, label: 'Years Experience', value: '1' },
+    { icon: GraduationCap, label: 'Certifications', value: '3' },
+    // { icon: Award, label: 'Awards Won', value: '5' },
   ];
 
   return (
