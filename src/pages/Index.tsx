@@ -36,22 +36,22 @@ const Index = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-cyan-600/5"></div>
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 text-gray-400 text-xs font-mono rotate-12">
-          const dataScientist = () => {'{'}<br/>
+          const dataScientist = () =&gt; &#123;<br/>
           &nbsp;&nbsp;return "AI & ML Expert";<br/>
-          {'}'}
+          &#125;
         </div>
         <div className="absolute top-32 right-20 text-gray-400 text-xs font-mono -rotate-12">
-          import {'{ deepLearning }'} from 'tensorflow';<br/>
-          model.compile({'{'} optimizer: 'adam' {'}'});
+          import &#123; deepLearning &#125; from 'tensorflow';<br/>
+          model.compile(&#123; optimizer: 'adam' &#125;);
         </div>
         <div className="absolute bottom-40 left-20 text-gray-400 text-xs font-mono rotate-6">
           SELECT * FROM insights<br/>
           WHERE innovation = 'high';
         </div>
         <div className="absolute bottom-20 right-32 text-gray-400 text-xs font-mono -rotate-6">
-          df.groupby('category').agg({'{'}<br/>
+          df.groupby('category').agg(&#123;<br/>
           &nbsp;&nbsp;'value': 'mean'<br/>
-          {'}'})
+          &#125;)
         </div>
       </div>
       
