@@ -32,10 +32,33 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-x-hidden">
-      {/* Advanced background effects */}
+      {/* Advanced background effects with code/data patterns */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-cyan-600/5"></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 text-gray-400 text-xs font-mono rotate-12">
+          const dataScientist = () => {'{'}<br/>
+          &nbsp;&nbsp;return "AI & ML Expert";<br/>
+          {'}'}
+        </div>
+        <div className="absolute top-32 right-20 text-gray-400 text-xs font-mono -rotate-12">
+          import {'{ deepLearning }'} from 'tensorflow';<br/>
+          model.compile({'{'} optimizer: 'adam' {'}'});
+        </div>
+        <div className="absolute bottom-40 left-20 text-gray-400 text-xs font-mono rotate-6">
+          SELECT * FROM insights<br/>
+          WHERE innovation = 'high';
+        </div>
+        <div className="absolute bottom-20 right-32 text-gray-400 text-xs font-mono -rotate-6">
+          df.groupby('category').agg({'{'}<br/>
+          &nbsp;&nbsp;'value': 'mean'<br/>
+          {'}'})
+        </div>
+      </div>
+      
+      {/* Floating geometric shapes */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-400/20 to-indigo-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="absolute top-1/2 left-0 w-64 h-64 bg-gradient-to-br from-purple-400/15 to-pink-600/15 rounded-full blur-2xl animate-pulse delay-500"></div>
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-xl z-50 border-b border-gray-200/50 shadow-lg shadow-black/5">
@@ -57,8 +80,8 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Logo - Centered on mobile, left on desktop */}
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent md:order-first">
+            {/* Logo - Left on desktop, right corner on mobile */}
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent md:order-first order-last">
               KS
             </div>
 
@@ -100,7 +123,7 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Mobile placeholder to center logo */}
+            {/* Mobile placeholder - now empty since logo moved to right */}
             <div className="md:hidden w-10"></div>
           </div>
 
@@ -254,7 +277,8 @@ const Index = () => {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>
+        {`
         @keyframes slideInLeft {
           from {
             opacity: 0;
@@ -270,7 +294,8 @@ const Index = () => {
           background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
           background-size: 20px 20px;
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
