@@ -31,13 +31,34 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-x-hidden">
+      {/* Advanced background effects */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-cyan-600/5"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-400/20 to-indigo-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-200 shadow-sm">
+      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-xl z-50 border-b border-gray-200/50 shadow-lg shadow-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {/* Mobile Hamburger Button - Left Side */}
+            <div className="md:hidden">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleMobileMenu}
+                className="p-2 hover:bg-blue-50 rounded-xl transition-all duration-300"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="h-6 w-6 text-gray-700" />
+                ) : (
+                  <Menu className="h-6 w-6 text-gray-700" />
+                )}
+              </Button>
+            </div>
+
+            {/* Logo - Centered on mobile, left on desktop */}
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent md:order-first">
               KS
             </div>
 
@@ -47,175 +68,209 @@ const Index = () => {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-300 relative group"
+                  className="text-gray-700 hover:text-blue-600 transition-all duration-300 relative group px-4 py-2 rounded-lg hover:bg-blue-50"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-8"></span>
                 </a>
               ))}
             </div>
 
             {/* Desktop Social Links */}
-            <div className="hidden md:flex items-center space-x-4">
-              <Button variant="ghost" size="sm" className="p-0" asChild>
+            <div className="hidden md:flex items-center space-x-3">
+              <Button variant="ghost" size="sm" className="p-3 hover:bg-blue-50 rounded-xl transition-all duration-300" asChild>
                 <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5 text-gray-600 hover:text-blue-600 transition-colors" />
                 </a>
               </Button>
-              <Button variant="ghost" size="sm" className="p-0" asChild>
+              <Button variant="ghost" size="sm" className="p-3 hover:bg-gray-50 rounded-xl transition-all duration-300" asChild>
                 <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5 text-gray-600 hover:text-gray-900 transition-colors" />
                 </a>
               </Button>
-              <Button variant="outline" size="sm" className="hover:bg-blue-50 hover:border-blue-300" asChild>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300" 
+                asChild
+              >
                 <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                   Resume
                 </a>
               </Button>
             </div>
 
-            {/* Mobile Hamburger Button */}
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={toggleMobileMenu}
-                className="p-2"
-              >
-                {isMobileMenuOpen ? (
-                  <X className="h-6 w-6 text-gray-700" />
-                ) : (
-                  <Menu className="h-6 w-6 text-gray-700" />
-                )}
-              </Button>
-            </div>
+            {/* Mobile placeholder to center logo */}
+            <div className="md:hidden w-10"></div>
           </div>
 
-          {/* Mobile Menu */}
-          <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          {/* Advanced Mobile Menu */}
+          <div className={`md:hidden transition-all duration-500 ease-in-out ${
             isMobileMenuOpen 
-              ? 'max-h-96 opacity-100 pb-4' 
+              ? 'max-h-screen opacity-100 pb-6' 
               : 'max-h-0 opacity-0 overflow-hidden'
           }`}>
-            <div className="flex flex-col space-y-4 pt-4 border-t border-gray-200">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMobileMenu}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-300 px-2 py-1 rounded-md hover:bg-blue-50"
-                >
-                  {item.label}
-                </a>
-              ))}
-              
-              {/* Mobile Social Links */}
-              <div className="flex items-center justify-center space-x-6 pt-4 border-t border-gray-200">
-                <Button variant="ghost" size="sm" className="p-0" asChild>
-                  <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-6 w-6 text-gray-600 hover:text-blue-600 transition-colors" />
+            <div className="bg-white/95 backdrop-blur-md rounded-2xl mx-2 mb-4 shadow-xl border border-gray-100 overflow-hidden">
+              <div className="flex flex-col py-4">
+                {navItems.map((item, index) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className="text-gray-700 hover:text-blue-600 transition-all duration-300 px-6 py-4 hover:bg-blue-50 relative group"
+                    style={{
+                      animationDelay: `${index * 50}ms`,
+                      animation: isMobileMenuOpen ? 'slideInLeft 0.3s ease-out forwards' : 'none'
+                    }}
+                  >
+                    <span className="font-medium">{item.label}</span>
+                    <div className="absolute left-6 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-8"></div>
                   </a>
-                </Button>
-                <Button variant="ghost" size="sm" className="p-0" asChild>
-                  <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-6 w-6 text-gray-600 hover:text-gray-900 transition-colors" />
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" className="hover:bg-blue-50 hover:border-blue-300" asChild>
-                  <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                    Resume
-                  </a>
-                </Button>
+                ))}
+                
+                {/* Mobile Social Links */}
+                <div className="flex items-center justify-center space-x-4 pt-6 mt-4 border-t border-gray-100">
+                  <Button variant="ghost" size="sm" className="p-3 hover:bg-blue-50 rounded-xl transition-all duration-300" asChild>
+                    <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-6 w-6 text-gray-600 hover:text-blue-600 transition-colors" />
+                    </a>
+                  </Button>
+                  <Button variant="ghost" size="sm" className="p-3 hover:bg-gray-50 rounded-xl transition-all duration-300" asChild>
+                    <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-6 w-6 text-gray-600 hover:text-gray-900 transition-colors" />
+                    </a>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 rounded-xl hover:shadow-lg transition-all duration-300" 
+                    asChild
+                  >
+                    <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                      Resume
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="hero" className="pt-20">
+      {/* Hero Section with enhanced styling */}
+      <section id="hero" className="pt-20 relative">
         <Hero />
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20">
-        <About />
+      {/* About Section with glass morphism effect */}
+      <section id="about" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-blue-50/60 backdrop-blur-sm"></div>
+        <div className="relative">
+          <About />
+        </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20 bg-white/50">
+      {/* Skills Section with enhanced background */}
+      <section id="skills" className="py-24 bg-gradient-to-br from-white/80 via-blue-50/50 to-purple-50/50 relative">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <Skills />
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20">
-        <Projects />
+      <section id="projects" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-l from-cyan-50/30 to-blue-50/30"></div>
+        <div className="relative">
+          <Projects />
+        </div>
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 bg-white/50">
+      <section id="education" className="py-24 bg-gradient-to-br from-indigo-50/50 via-purple-50/30 to-pink-50/20 relative">
         <Education />
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <Contact />
+      {/* Contact Section with advanced gradient */}
+      <section id="contact" className="py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-400/20 to-transparent"></div>
+        <div className="relative">
+          <Contact />
+        </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-4">Kodari Sravan</h3>
-              <p className="text-gray-400">Data Scientist & ML Engineer</p>
-              <p className="text-gray-400 text-sm mt-2">Passionate about AI and Machine Learning</p>
+      {/* Enhanced Footer */}
+      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center md:text-left space-y-4">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Kodari Sravan</h3>
+              <p className="text-gray-300 text-lg">Data Scientist & ML Engineer</p>
+              <p className="text-gray-400 text-sm leading-relaxed">Passionate about AI and Machine Learning, transforming data into actionable insights</p>
             </div>
-            <div className="text-center md:text-left">
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <div className="space-y-2">
+            <div className="text-center md:text-left space-y-4">
+              <h4 className="font-semibold text-lg text-white mb-6">Quick Links</h4>
+              <div className="space-y-3">
                 {navItems.slice(1).map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
-                    className="block text-gray-400 hover:text-white transition-colors duration-300"
+                    className="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 py-1"
                   >
                     {item.label}
                   </a>
                 ))}
               </div>
             </div>
-            <div className="text-center md:text-left">
-              <h4 className="font-semibold mb-4">Connect</h4>
+            <div className="text-center md:text-left space-y-4">
+              <h4 className="font-semibold text-lg text-white mb-6">Connect</h4>
               <div className="flex justify-center md:justify-start space-x-4">
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 transition-colors duration-300" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-5 w-5" />
+                    <Linkedin className="h-6 w-6" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 transition-colors duration-300" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-5 w-5" />
+                    <Github className="h-6 w-6" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 transition-colors duration-300" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://x.com/sravankodari1" target="_blank" rel="noopener noreferrer">
-                    <Twitter className="h-5 w-5" />
+                    <Twitter className="h-6 w-6" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-0 transition-colors duration-300" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="mailto:sravankodari4@gmail.com">
-                    <Mail className="h-5 w-5" />
+                    <Mail className="h-6 w-6" />
                   </a>
                 </Button>
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Kodari Sravan. Crafted with passion and precision.</p>
+          <div className="border-t border-gray-700/50 mt-12 pt-8 text-center">
+            <p className="text-gray-400">&copy; 2025 Kodari Sravan. Crafted with passion and precision.</p>
           </div>
         </div>
       </footer>
+
+      <style jsx>{`
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        .bg-grid-pattern {
+          background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+          background-size: 20px 20px;
+        }
+      `}</style>
     </div>
   );
 };
