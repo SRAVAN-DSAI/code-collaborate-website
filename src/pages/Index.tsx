@@ -32,82 +32,33 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-x-hidden">
-      {/* Advanced background effects with Data Science/ML patterns */}
+      {/* Advanced background effects with code/data patterns */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-cyan-600/5"></div>
       <div className="absolute inset-0 opacity-5">
-        {/* Data Science Code Snippets */}
         <div className="absolute top-10 left-10 text-gray-400 text-xs font-mono rotate-12">
-          import pandas as pd<br/>
-          import numpy as np<br/>
-          df = pd.read_csv('data.csv')
+          const dataScientist = () =&gt; &#123;<br/>
+          &nbsp;&nbsp;return "AI & ML Expert";<br/>
+          &#125;
         </div>
         <div className="absolute top-32 right-20 text-gray-400 text-xs font-mono -rotate-12">
-          from sklearn.ensemble import RandomForestClassifier<br/>
-          model = RandomForestClassifier(n_estimators=100)<br/>
-          model.fit(X_train, y_train)
-        </div>
-        <div className="absolute top-1/2 left-5 text-gray-400 text-xs font-mono rotate-6">
-          import tensorflow as tf<br/>
-          model = tf.keras.Sequential([<br/>
-          &nbsp;&nbsp;tf.keras.layers.Dense(128, activation='relu'),<br/>
-          &nbsp;&nbsp;tf.keras.layers.Dense(10, activation='softmax')<br/>
-          ])
+          import &#123; deepLearning &#125; from 'tensorflow';<br/>
+          model.compile(&#123; optimizer: 'adam' &#125;);
         </div>
         <div className="absolute bottom-40 left-20 text-gray-400 text-xs font-mono rotate-6">
-          SELECT AVG(accuracy) FROM models<br/>
-          WHERE algorithm = 'neural_network'<br/>
-          GROUP BY dataset;
+          SELECT * FROM insights<br/>
+          WHERE innovation = 'high';
         </div>
         <div className="absolute bottom-20 right-32 text-gray-400 text-xs font-mono -rotate-6">
-          accuracy = metrics.accuracy_score(y_test, y_pred)<br/>
-          precision = metrics.precision_score(y_test, y_pred)<br/>
-          recall = metrics.recall_score(y_test, y_pred)
-        </div>
-        <div className="absolute top-1/3 right-10 text-gray-400 text-xs font-mono rotate-12">
-          plt.figure(figsize=(10, 6))<br/>
-          plt.plot(epochs, loss, 'b-', label='Training Loss')<br/>
-          plt.xlabel('Epochs')<br/>
-          plt.ylabel('Loss')
-        </div>
-        <div className="absolute bottom-1/3 left-1/4 text-gray-400 text-xs font-mono -rotate-12">
-          from scipy import stats<br/>
-          correlation = stats.pearsonr(x, y)<br/>
-          p_value = correlation[1]
-        </div>
-        <div className="absolute top-2/3 right-1/4 text-gray-400 text-xs font-mono rotate-6">
-          scaler = StandardScaler()<br/>
-          X_scaled = scaler.fit_transform(X)<br/>
-          kmeans = KMeans(n_clusters=3)
+          df.groupby('category').agg(&#123;<br/>
+          &nbsp;&nbsp;'value': 'mean'<br/>
+          &#125;)
         </div>
       </div>
       
-      {/* Mathematical formulas and ML concepts */}
-      <div className="absolute inset-0 opacity-3">
-        <div className="absolute top-20 right-1/3 text-gray-500 text-sm font-mono rotate-12">
-          E = mc²
-        </div>
-        <div className="absolute bottom-1/4 left-1/3 text-gray-500 text-sm font-mono -rotate-6">
-          σ = √(Σ(x-μ)²/N)
-        </div>
-        <div className="absolute top-1/2 right-20 text-gray-500 text-sm font-mono rotate-3">
-          f(x) = 1/(1+e^(-x))
-        </div>
-        <div className="absolute bottom-40 right-1/4 text-gray-500 text-sm font-mono -rotate-12">
-          ∇f = ∂f/∂x₁ î + ∂f/∂x₂ ĵ
-        </div>
-      </div>
-      
-      {/* Floating geometric shapes representing data points */}
+      {/* Floating geometric shapes */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-400/20 to-indigo-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       <div className="absolute top-1/2 left-0 w-64 h-64 bg-gradient-to-br from-purple-400/15 to-pink-600/15 rounded-full blur-2xl animate-pulse delay-500"></div>
-      
-      {/* Data visualization elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-40 left-1/2 w-32 h-32 border-2 border-blue-300 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
-        <div className="absolute bottom-60 right-1/3 w-24 h-24 border-2 border-purple-300 rounded-lg rotate-45 animate-pulse"></div>
-        <div className="absolute top-1/3 left-1/4 w-16 h-16 bg-gradient-to-r from-cyan-300/30 to-blue-300/30 rounded-full animate-bounce" style={{animationDuration: '3s'}}></div>
-      </div>
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-xl z-50 border-b border-gray-200/50 shadow-lg shadow-black/5">
