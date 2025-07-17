@@ -40,21 +40,21 @@ const Education = () => {
       name: 'Applied Data Science Lab',
       issuer: 'WorldQuant University',
       date: 'June 2025',
-      credentialId: 'WQU-ADSL-2025',
+      // credentialId: 'WQU-ADSL-2025',
       credentialUrl: 'https://www.credly.com/badges/8e07e8f3-8c91-4462-b350-0e0dc9caba5f'
     },
     {
       name: 'Deep Learning for Computer Vision',
       issuer: 'WorldQuant University',
       date: 'April 2025',
-      credentialId: 'WQU-DLCV-2025',
+      // credentialId: 'WQU-DLCV-2025',
       credentialUrl: 'https://www.credly.com/badges/cfcd0d66-6e06-4797-899f-8989b851f672'
     },
     {
       name: 'Artificial Intelligence Foundations',
       issuer: 'Teachnook x IIT Roorkee',
       date: 'August 2024',
-      credentialId: 'TN-IITK-AI-2024',
+      certificateId: 'TNCC1552',
       credentialUrl: 'https://drive.google.com/file/d/1mytswfPrwDrPbP1bqcsMsIB6VTrLLQb8/view?usp=drive_link'
     }
   ];
