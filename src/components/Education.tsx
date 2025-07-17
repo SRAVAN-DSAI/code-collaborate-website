@@ -127,7 +127,7 @@ const Education = () => {
                   </div>
                   <p className="text-blue-600 font-medium mb-1">{cert.issuer}</p>
                   <div className="flex items-center justify-between">
-                    <p className="text-xs text-gray-500">Credential ID: {cert.credentialId}</p>
+{/*                     <p className="text-xs text-gray-500">Credential ID: {cert.credentialId}</p> */}
                     <a 
                       href={cert.credentialUrl} 
                       target="_blank" 
