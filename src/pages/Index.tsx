@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail, Menu, X, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -40,6 +39,9 @@ const Index = () => {
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
     </svg>
   );
+
+  // Animation classes array for floating elements
+  const floatAnimations = ['animate-float-0', 'animate-float-1', 'animate-float-2', 'animate-float-3'];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative overflow-x-hidden">
@@ -92,7 +94,7 @@ const Index = () => {
             key={i}
             className={`absolute text-xs font-mono opacity-30 ${
               i % 3 === 0 ? 'text-emerald-400' : i % 3 === 1 ? 'text-blue-400' : 'text-purple-400'
-            } animate-float-${i % 4}`}
+            } ${floatAnimations[i % 4]}`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`
