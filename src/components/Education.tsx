@@ -198,13 +198,17 @@ const Education = () => {
       {/* Skills Stats */}
       <div className="mt-16 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8">
         <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Learning Journey Stats</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-5">
           <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">2+</div>
-            <div className="text-gray-600 text-sm">Years of Learning</div>
+            <div className="text-3xl font-bold text-orange-600 mb-2">10+</div>
+            <div className="text-gray-600 text-sm">Projects</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">5+</div>
+            <div className="text-3xl font-bold text-blue-600 mb-2">1</div>
+            <div className="text-gray-600 text-sm">Year of Learning</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-purple-600 mb-2">3</div>
             <div className="text-gray-600 text-sm">Certifications</div>
           </div>
           <div className="text-center">
