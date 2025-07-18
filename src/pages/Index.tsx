@@ -369,8 +369,7 @@ const Index = () => {
         </div>
       </footer>
 
-      <style>
-        {`
+      <style jsx>{`
         @keyframes slideInLeft {
           from {
             opacity: 0;
@@ -401,8 +400,7 @@ const Index = () => {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-35px) rotate(-90deg); }
         }
-        `}
-      </style>
+      `}</style>
     </div>
   );
 };
