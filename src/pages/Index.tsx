@@ -1,3 +1,4 @@
+
 import { Github, Linkedin, Mail, Menu, X, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -91,11 +92,10 @@ const Index = () => {
             key={i}
             className={`absolute text-xs font-mono opacity-30 ${
               i % 3 === 0 ? 'text-emerald-400' : i % 3 === 1 ? 'text-blue-400' : 'text-purple-400'
-            }`}
+            } animate-float-${i % 4}`}
             style={{
               left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float-${i % 4} ${4 + Math.random() * 3}s ease-in-out infinite`
+              top: `${Math.random() * 100}%`
             }}
           >
             {['📊', '📈', '🤖', '⚡', '🔬', '💡', '🎯', '🚀'][i % 8]}
