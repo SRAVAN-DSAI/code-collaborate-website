@@ -83,7 +83,7 @@ const Hero = () => {
             </div>
             
             {/* Status badge */}
-            <div className="absolute -top-3 -right-4 bg-gradient-to-r from-green-400 to-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold transform rotate-12 shadow-lg animate-bounce">
+            <div className="absolute -top-6 -right-4 bg-gradient-to-r from-green-400 to-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold transform rotate-12 shadow-lg animate-bounce">
               Available for opportunities!
             </div>
             
