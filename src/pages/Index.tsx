@@ -227,10 +227,9 @@ const Index = () => {
                     key={item.href}
                     href={item.href}
                     onClick={closeMobileMenu}
-                    className="text-gray-200 hover:text-emerald-400 transition-all duration-300 px-6 py-4 hover:bg-white/10 relative group font-medium"
+                    className="text-gray-200 hover:text-emerald-400 transition-all duration-300 px-6 py-4 hover:bg-white/10 relative group font-medium animate-slideInLeft"
                     style={{
                       animationDelay: `${index * 50}ms`,
-                      animation: isMobileMenuOpen ? 'slideInLeft 0.3s ease-out forwards' : 'none'
                     }}
                   >
                     <span>{item.label}</span>
@@ -368,39 +367,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-
-      <style jsx>{`
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
-        @keyframes float-0 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
-        }
-        
-        @keyframes float-1 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-30px) rotate(-180deg); }
-        }
-        
-        @keyframes float-2 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-25px) rotate(90deg); }
-        }
-        
-        @keyframes float-3 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-35px) rotate(-90deg); }
-        }
-      `}</style>
     </div>
   );
 };
