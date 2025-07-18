@@ -42,134 +42,112 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-x-hidden">
-      {/* Enhanced Animated Background with Neural Network Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        {/* Neural Network Connections */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative overflow-x-hidden">
+      {/* Enhanced Data Science Background */}
+      <div className="absolute inset-0 opacity-15">
+        {/* Dynamic Data Visualization Pattern */}
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="neural-grid" width="100" height="100" patternUnits="userSpaceOnUse">
-              <circle cx="20" cy="20" r="2" fill="currentColor" className="text-cyan-400">
-                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" />
+            <pattern id="data-viz" width="150" height="150" patternUnits="userSpaceOnUse">
+              {/* Data Nodes */}
+              <circle cx="30" cy="30" r="3" fill="currentColor" className="text-emerald-400">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
               </circle>
-              <circle cx="80" cy="40" r="2" fill="currentColor" className="text-blue-400">
-                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+              <circle cx="120" cy="60" r="4" fill="currentColor" className="text-blue-400">
+                <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite" />
               </circle>
-              <circle cx="50" cy="80" r="2" fill="currentColor" className="text-purple-400">
-                <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
+              <circle cx="75" cy="120" r="3.5" fill="currentColor" className="text-purple-400">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
               </circle>
-              <line x1="20" y1="20" x2="80" y2="40" stroke="currentColor" strokeWidth="0.5" className="text-cyan-400" opacity="0.3" />
-              <line x1="80" y1="40" x2="50" y2="80" stroke="currentColor" strokeWidth="0.5" className="text-blue-400" opacity="0.3" />
-              <line x1="50" y1="80" x2="20" y2="20" stroke="currentColor" strokeWidth="0.5" className="text-purple-400" opacity="0.3" />
+              
+              {/* Data Connections */}
+              <line x1="30" y1="30" x2="120" y2="60" stroke="currentColor" strokeWidth="1" className="text-emerald-400" opacity="0.4">
+                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite" />
+              </line>
+              <line x1="120" y1="60" x2="75" y2="120" stroke="currentColor" strokeWidth="1" className="text-blue-400" opacity="0.4">
+                <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite" />
+              </line>
+              <line x1="75" y1="120" x2="30" y2="30" stroke="currentColor" strokeWidth="1" className="text-purple-400" opacity="0.4">
+                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite" />
+              </line>
+              
+              {/* Mini Charts */}
+              <rect x="10" y="100" width="2" height="15" fill="currentColor" className="text-cyan-400" opacity="0.6" />
+              <rect x="15" y="95" width="2" height="20" fill="currentColor" className="text-cyan-400" opacity="0.7" />
+              <rect x="20" y="105" width="2" height="10" fill="currentColor" className="text-cyan-400" opacity="0.5" />
+              
+              <rect x="100" y="10" width="15" height="2" fill="currentColor" className="text-pink-400" opacity="0.6" />
+              <rect x="95" y="15" width="20" height="2" fill="currentColor" className="text-pink-400" opacity="0.7" />
+              <rect x="105" y="20" width="10" height="2" fill="currentColor" className="text-pink-400" opacity="0.5" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#neural-grid)" />
+          <rect width="100%" height="100%" fill="url(#data-viz)" />
         </svg>
       </div>
 
-      {/* Floating Data Particles */}
+      {/* Floating Data Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60"
+            className={`absolute text-xs font-mono opacity-30 ${
+              i % 3 === 0 ? 'text-emerald-400' : i % 3 === 1 ? 'text-blue-400' : 'text-purple-400'
+            }`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animation: `float-${i % 3} ${3 + Math.random() * 4}s ease-in-out infinite`
+              animation: `float-${i % 4} ${4 + Math.random() * 3}s ease-in-out infinite`
             }}
-          />
+          >
+            {['📊', '📈', '🤖', '⚡', '🔬', '💡', '🎯', '🚀'][i % 8]}
+          </div>
         ))}
       </div>
 
-      {/* Matrix-style Code Rain */}
-      <div className="absolute inset-0 opacity-5 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-20 text-green-400 text-xs font-mono animate-pulse">
-          {`import numpy as np
-import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
-from tensorflow import keras
-
-# Deep Learning Model
-model = keras.Sequential([
-    keras.layers.Dense(512, activation='relu'),
-    keras.layers.Dropout(0.3),
-    keras.layers.Dense(256, activation='relu'),
-    keras.layers.Dense(10, activation='softmax')
-])
-
-# Data Preprocessing
-X_train, X_test, y_train, y_test = train_test_split(
-    features, target, test_size=0.2, random_state=42
-)`}
+      {/* Data Science Keywords Overlay */}
+      <div className="absolute inset-0 opacity-10 overflow-hidden pointer-events-none font-mono">
+        <div className="absolute top-20 left-10 text-emerald-300 text-lg font-bold transform rotate-12 space-y-3">
+          <div className="animate-pulse">Machine Learning</div>
+          <div className="animate-pulse delay-1000">Deep Learning</div>
+          <div className="animate-pulse delay-2000">Neural Networks</div>
         </div>
-        <div className="absolute top-1/3 right-20 text-blue-400 text-xs font-mono animate-pulse delay-1000">
-          {`# Neural Network Architecture
-def build_neural_network():
-    model = tf.keras.Sequential([
-        tf.keras.layers.Input(shape=(784,)),
-        tf.keras.layers.Dense(128, activation='relu'),
-        tf.keras.layers.BatchNormalization(),
-        tf.keras.layers.Dropout(0.2),
-        tf.keras.layers.Dense(64, activation='relu'),
-        tf.keras.layers.Dense(10, activation='softmax')
-    ])
-    return model
-
-# Training Loop
-for epoch in range(epochs):
-    loss = model.fit(X_train, y_train)
-    accuracy = model.evaluate(X_test, y_test)`}
+        <div className="absolute top-1/3 right-20 text-blue-300 text-lg font-bold transform -rotate-12 space-y-3">
+          <div className="animate-pulse delay-500">Data Analytics</div>
+          <div className="animate-pulse delay-1500">Big Data</div>
+          <div className="animate-pulse delay-2500">AI Solutions</div>
         </div>
-        <div className="absolute bottom-1/3 left-32 text-purple-400 text-xs font-mono animate-pulse delay-2000">
-          {`# Advanced Analytics
-df_analysis = df.groupby('category').agg({
-    'revenue': ['mean', 'sum', 'std'],
-    'customers': 'count',
-    'profit_margin': lambda x: x.quantile(0.75)
-}).round(2)
-
-# Statistical Modeling
-from scipy import stats
-correlation_matrix = df.corr()
-p_values = stats.pearsonr(X, y)
-
-# Machine Learning Pipeline
-pipeline = Pipeline([
-    ('scaler', StandardScaler()),
-    ('selector', SelectKBest(k=10)),
-    ('classifier', RandomForestClassifier(n_estimators=100))
-])`}
+        <div className="absolute bottom-1/3 left-1/3 text-purple-300 text-lg font-bold transform rotate-6 space-y-3">
+          <div className="animate-pulse delay-300">Predictive Models</div>
+          <div className="animate-pulse delay-1300">Statistical Analysis</div>
+          <div className="animate-pulse delay-2300">Data Visualization</div>
+        </div>
+        <div className="absolute top-1/2 left-16 text-cyan-300 text-lg font-bold transform -rotate-6 space-y-3">
+          <div className="animate-pulse delay-700">Python • TensorFlow</div>
+          <div className="animate-pulse delay-1700">Scikit-learn • Pandas</div>
+          <div className="animate-pulse delay-2700">MLOps • Cloud AI</div>
         </div>
       </div>
 
-      {/* Mathematical Formulas Overlay */}
+      {/* Subtle Code Snippets */}
       <div className="absolute inset-0 opacity-8 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-10 text-cyan-300 text-lg font-serif">
-          <div className="transform rotate-12 space-y-2">
-            <div>∇f(x) = Σᵢ ∂f/∂xᵢ êᵢ</div>
-            <div>σ(z) = 1/(1 + e⁻ᶻ)</div>
-            <div>L = -Σᵢ yᵢlog(ŷᵢ)</div>
+        <div className="absolute top-32 right-32 text-emerald-400 text-sm font-mono animate-pulse">
+          <div className="space-y-1">
+            <div>model.fit(X_train, y_train)</div>
+            <div>accuracy = model.score(X_test, y_test)</div>
+            <div>print(f"Accuracy: {accuracy:.2f}")</div>
           </div>
         </div>
-        <div className="absolute top-1/2 right-16 text-blue-300 text-lg font-serif">
-          <div className="transform -rotate-12 space-y-2">
-            <div>P(A|B) = P(B|A)×P(A)/P(B)</div>
-            <div>R² = 1 - SSᵣₑₛ/SSₜₒₜ</div>
-            <div>F₁ = 2×(P×R)/(P+R)</div>
-          </div>
-        </div>
-        <div className="absolute bottom-1/4 left-1/3 text-purple-300 text-lg font-serif">
-          <div className="transform rotate-6 space-y-2">
-            <div>MSE = (1/n)Σᵢ(yᵢ - ŷᵢ)²</div>
-            <div>χ² = Σᵢ(Oᵢ - Eᵢ)²/Eᵢ</div>
-            <div>log(p/(1-p)) = β₀ + β₁x</div>
+        <div className="absolute bottom-40 left-40 text-blue-400 text-sm font-mono animate-pulse delay-1000">
+          <div className="space-y-1">
+            <div>df = pd.read_csv('data.csv')</div>
+            <div>df.describe()</div>
+            <div>plt.plot(df['predictions'])</div>
           </div>
         </div>
       </div>
       
-      {/* Enhanced Glassmorphism Navigation */}
-      <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-2xl z-50 border-b border-white/10 shadow-2xl">
+      {/* Enhanced Navigation with Better Typography */}
+      <nav className="fixed top-0 w-full bg-black/30 backdrop-blur-3xl z-50 border-b border-white/20 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Mobile Hamburger Button */}
@@ -178,7 +156,7 @@ pipeline = Pipeline([
                 variant="ghost"
                 size="sm"
                 onClick={toggleMobileMenu}
-                className="p-2 hover:bg-white/10 rounded-xl transition-all duration-300 text-white"
+                className="p-2 hover:bg-white/20 rounded-xl transition-all duration-300 text-white"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />
@@ -188,34 +166,34 @@ pipeline = Pipeline([
               </Button>
             </div>
 
-            {/* Enhanced Logo */}
-            <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent md:order-first order-last">
+            {/* Enhanced Logo with Better Typography */}
+            <div className="text-4xl font-black bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent md:order-first order-last tracking-tight">
               KS
-              <span className="text-xs ml-1 text-cyan-400">Data Scientist</span>
+              <span className="text-sm ml-2 text-emerald-400 font-medium">Data Scientist</span>
             </div>
 
             {/* Enhanced Desktop Navigation */}
-            <div className="hidden md:flex space-x-2">
+            <div className="hidden md:flex space-x-1">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group px-6 py-3 rounded-xl hover:bg-white/5 backdrop-blur-sm border border-transparent hover:border-white/10"
+                  className="text-gray-200 hover:text-emerald-400 transition-all duration-300 relative group px-6 py-3 rounded-xl hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/20 font-medium"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 group-hover:w-8"></span>
+                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-purple-400 transition-all duration-300 group-hover:w-8"></span>
                 </a>
               ))}
             </div>
 
             {/* Enhanced Desktop Social Links */}
             <div className="hidden md:flex items-center space-x-3">
-              <Button variant="ghost" size="sm" className="p-3 hover:bg-white/10 rounded-xl transition-all duration-300 text-gray-300 hover:text-cyan-400" asChild>
+              <Button variant="ghost" size="sm" className="p-3 hover:bg-white/20 rounded-xl transition-all duration-300 text-gray-200 hover:text-emerald-400" asChild>
                 <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="ghost" size="sm" className="p-3 hover:bg-white/10 rounded-xl transition-all duration-300 text-gray-300 hover:text-cyan-400" asChild>
+              <Button variant="ghost" size="sm" className="p-3 hover:bg-white/20 rounded-xl transition-all duration-300 text-gray-200 hover:text-emerald-400" asChild>
                 <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                 </a>
@@ -223,7 +201,7 @@ pipeline = Pipeline([
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white border-0 rounded-xl hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 transition-all duration-300" 
+                className="px-6 py-2 bg-gradient-to-r from-emerald-500 to-purple-500 text-white border-0 rounded-xl hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105 transition-all duration-300 font-medium" 
                 asChild
               >
                 <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -242,32 +220,32 @@ pipeline = Pipeline([
               ? 'max-h-screen opacity-100 pb-6' 
               : 'max-h-0 opacity-0 overflow-hidden'
           }`}>
-            <div className="bg-black/30 backdrop-blur-xl rounded-2xl mx-2 mb-4 shadow-2xl border border-white/10 overflow-hidden">
+            <div className="bg-black/40 backdrop-blur-xl rounded-2xl mx-2 mb-4 shadow-2xl border border-white/20 overflow-hidden">
               <div className="flex flex-col py-4">
                 {navItems.map((item, index) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={closeMobileMenu}
-                    className="text-gray-300 hover:text-cyan-400 transition-all duration-300 px-6 py-4 hover:bg-white/5 relative group"
+                    className="text-gray-200 hover:text-emerald-400 transition-all duration-300 px-6 py-4 hover:bg-white/10 relative group font-medium"
                     style={{
                       animationDelay: `${index * 50}ms`,
                       animation: isMobileMenuOpen ? 'slideInLeft 0.3s ease-out forwards' : 'none'
                     }}
                   >
-                    <span className="font-medium">{item.label}</span>
-                    <div className="absolute left-6 bottom-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 group-hover:w-8"></div>
+                    <span>{item.label}</span>
+                    <div className="absolute left-6 bottom-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-purple-400 transition-all duration-300 group-hover:w-8"></div>
                   </a>
                 ))}
                 
                 {/* Mobile Social Links */}
-                <div className="flex items-center justify-center space-x-4 pt-6 mt-4 border-t border-white/10">
-                  <Button variant="ghost" size="sm" className="p-3 hover:bg-white/10 rounded-xl transition-all duration-300 text-gray-300 hover:text-cyan-400" asChild>
+                <div className="flex items-center justify-center space-x-4 pt-6 mt-4 border-t border-white/20">
+                  <Button variant="ghost" size="sm" className="p-3 hover:bg-white/20 rounded-xl transition-all duration-300 text-gray-200 hover:text-emerald-400" asChild>
                     <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-6 w-6" />
                     </a>
                   </Button>
-                  <Button variant="ghost" size="sm" className="p-3 hover:bg-white/10 rounded-xl transition-all duration-300 text-gray-300 hover:text-cyan-400" asChild>
+                  <Button variant="ghost" size="sm" className="p-3 hover:bg-white/20 rounded-xl transition-all duration-300 text-gray-200 hover:text-emerald-400" asChild>
                     <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
                       <Github className="h-6 w-6" />
                     </a>
@@ -275,7 +253,7 @@ pipeline = Pipeline([
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white border-0 rounded-xl hover:shadow-lg transition-all duration-300" 
+                    className="px-6 py-2 bg-gradient-to-r from-emerald-500 to-purple-500 text-white border-0 rounded-xl hover:shadow-lg transition-all duration-300 font-medium" 
                     asChild
                   >
                     <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -295,9 +273,9 @@ pipeline = Pipeline([
         <Hero />
       </section>
 
-      {/* About Section with Enhanced Glassmorphism */}
+      {/* About Section */}
       <section id="about" className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-purple-900/20 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-purple-900/30 backdrop-blur-sm"></div>
         <div className="relative">
           <About />
         </div>
@@ -305,7 +283,7 @@ pipeline = Pipeline([
 
       {/* Skills Section */}
       <section id="skills" className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-purple-900/50 to-slate-900/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-purple-950/70 to-slate-950/90"></div>
         <div className="relative">
           <Skills />
         </div>
@@ -313,7 +291,7 @@ pipeline = Pipeline([
 
       {/* Projects Section */}
       <section id="projects" className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-l from-cyan-900/20 to-purple-900/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-l from-emerald-900/20 to-purple-900/30"></div>
         <div className="relative">
           <Projects />
         </div>
@@ -321,38 +299,38 @@ pipeline = Pipeline([
 
       {/* Education Section */}
       <section id="education" className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-slate-900/50 to-cyan-900/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-950/40 via-slate-950/60 to-emerald-950/30"></div>
         <div className="relative">
           <Education />
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-gradient-to-br from-cyan-900 via-purple-900 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section id="contact" className="py-24 bg-gradient-to-br from-emerald-950 via-purple-950 to-slate-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative">
           <Contact />
         </div>
       </section>
 
       {/* Enhanced Footer */}
-      <footer className="bg-gradient-to-br from-slate-900 via-black to-slate-900 text-white py-16 relative overflow-hidden border-t border-white/10">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/10 to-purple-900/10"></div>
+      <footer className="bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white py-16 relative overflow-hidden border-t border-white/20">
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/20 to-purple-950/20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center md:text-left space-y-4">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Kodari Sravan</h3>
-              <p className="text-gray-300 text-lg">Data Scientist & ML Engineer</p>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-purple-400 bg-clip-text text-transparent">Kodari Sravan</h3>
+              <p className="text-gray-200 text-xl font-medium">Data Scientist & ML Engineer</p>
               <p className="text-gray-400 text-sm leading-relaxed">Transforming data into intelligent solutions through advanced machine learning and deep learning techniques</p>
             </div>
             <div className="text-center md:text-left space-y-4">
-              <h4 className="font-semibold text-lg text-white mb-6">Quick Links</h4>
+              <h4 className="font-bold text-xl text-white mb-6">Quick Links</h4>
               <div className="space-y-3">
                 {navItems.slice(1).map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
-                    className="block text-gray-300 hover:text-cyan-400 hover:translate-x-2 transition-all duration-300 py-1"
+                    className="block text-gray-300 hover:text-emerald-400 hover:translate-x-2 transition-all duration-300 py-1 font-medium"
                   >
                     {item.label}
                   </a>
@@ -360,24 +338,24 @@ pipeline = Pipeline([
               </div>
             </div>
             <div className="text-center md:text-left space-y-4">
-              <h4 className="font-semibold text-lg text-white mb-6">Connect</h4>
+              <h4 className="font-bold text-xl text-white mb-6">Connect</h4>
               <div className="flex justify-center md:justify-start space-x-4">
-                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-cyan-400 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-emerald-400 hover:bg-white/20 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-6 w-6" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-cyan-400 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-emerald-400 hover:bg-white/20 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
                     <Github className="h-6 w-6" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-cyan-400 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-emerald-400 hover:bg-white/20 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://x.com/sravankodari1" target="_blank" rel="noopener noreferrer">
                     <XIcon className="h-6 w-6" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-cyan-400 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-emerald-400 hover:bg-white/20 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="mailto:sravankodari4@gmail.com">
                     <Mail className="h-6 w-6" />
                   </a>
@@ -386,7 +364,7 @@ pipeline = Pipeline([
             </div>
           </div>
           <div className="border-t border-gray-700/50 mt-12 pt-8 text-center">
-            <p className="text-gray-400">&copy; 2025 Kodari Sravan. Built with passion for data science and innovation.</p>
+            <p className="text-gray-400 font-medium">&copy; 2025 Kodari Sravan. Built with passion for data science and innovation.</p>
           </div>
         </div>
       </footer>
@@ -417,6 +395,11 @@ pipeline = Pipeline([
         @keyframes float-2 {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-25px) rotate(90deg); }
+        }
+        
+        @keyframes float-3 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-35px) rotate(-90deg); }
         }
         `}
       </style>
