@@ -77,8 +77,8 @@ const Hero = () => {
                 className="w-full h-full object-cover rounded-full shadow-2xl relative z-10 border-4 border-white"
               />
               {/* Floating elements around the image */}
-              <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-80 animate-bounce"></div>
-              <div className="absolute -bottom-8 -left-8 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full opacity-70 animate-pulse"></div>
+{/*               <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-80 animate-bounce"></div>
+              <div className="absolute -bottom-8 -left-8 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full opacity-70 animate-pulse"></div> */}
 {/*               <div className="absolute top-1/2 -right-12 w-8 h-8 bg-gradient-to-r from-pink-400 to-red-500 rounded-full opacity-60 animate-ping"></div> */}
             </div>
             
