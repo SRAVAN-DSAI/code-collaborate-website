@@ -42,119 +42,188 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-x-hidden">
-      {/* Enhanced background effects with ML/Data Science patterns */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-cyan-600/5"></div>
-      <div className="absolute inset-0 opacity-5">
-        {/* Python/ML Code Patterns */}
-        <div className="absolute top-10 left-10 text-gray-400 text-xs font-mono rotate-12">
-          import pandas as pd<br/>
-          import numpy as np<br/>
-          from sklearn.model_selection import train_test_split<br/>
-          model = RandomForestClassifier()
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-x-hidden">
+      {/* Enhanced Animated Background with Neural Network Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        {/* Neural Network Connections */}
+        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="neural-grid" width="100" height="100" patternUnits="userSpaceOnUse">
+              <circle cx="20" cy="20" r="2" fill="currentColor" className="text-cyan-400">
+                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="80" cy="40" r="2" fill="currentColor" className="text-blue-400">
+                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="50" cy="80" r="2" fill="currentColor" className="text-purple-400">
+                <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite" />
+              </circle>
+              <line x1="20" y1="20" x2="80" y2="40" stroke="currentColor" strokeWidth="0.5" className="text-cyan-400" opacity="0.3" />
+              <line x1="80" y1="40" x2="50" y2="80" stroke="currentColor" strokeWidth="0.5" className="text-blue-400" opacity="0.3" />
+              <line x1="50" y1="80" x2="20" y2="20" stroke="currentColor" strokeWidth="0.5" className="text-purple-400" opacity="0.3" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#neural-grid)" />
+        </svg>
+      </div>
+
+      {/* Floating Data Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `float-${i % 3} ${3 + Math.random() * 4}s ease-in-out infinite`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Matrix-style Code Rain */}
+      <div className="absolute inset-0 opacity-5 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-20 text-green-400 text-xs font-mono animate-pulse">
+          {`import numpy as np
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from tensorflow import keras
+
+# Deep Learning Model
+model = keras.Sequential([
+    keras.layers.Dense(512, activation='relu'),
+    keras.layers.Dropout(0.3),
+    keras.layers.Dense(256, activation='relu'),
+    keras.layers.Dense(10, activation='softmax')
+])
+
+# Data Preprocessing
+X_train, X_test, y_train, y_test = train_test_split(
+    features, target, test_size=0.2, random_state=42
+)`}
         </div>
-        <div className="absolute top-32 right-20 text-gray-400 text-xs font-mono -rotate-12">
-          # Deep Learning Pipeline<br/>
-          model = Sequential([<br/>
-          &nbsp;&nbsp;Dense(128, activation='relu'),<br/>
-          &nbsp;&nbsp;Dropout(0.2),<br/>
-          &nbsp;&nbsp;Dense(10, activation='softmax')<br/>
-          ])
+        <div className="absolute top-1/3 right-20 text-blue-400 text-xs font-mono animate-pulse delay-1000">
+          {`# Neural Network Architecture
+def build_neural_network():
+    model = tf.keras.Sequential([
+        tf.keras.layers.Input(shape=(784,)),
+        tf.keras.layers.Dense(128, activation='relu'),
+        tf.keras.layers.BatchNormalization(),
+        tf.keras.layers.Dropout(0.2),
+        tf.keras.layers.Dense(64, activation='relu'),
+        tf.keras.layers.Dense(10, activation='softmax')
+    ])
+    return model
+
+# Training Loop
+for epoch in range(epochs):
+    loss = model.fit(X_train, y_train)
+    accuracy = model.evaluate(X_test, y_test)`}
         </div>
-        <div className="absolute bottom-40 left-20 text-gray-400 text-xs font-mono rotate-6">
-          # Data Analysis<br/>
-          df.groupby('category').agg(&#123;<br/>
-          &nbsp;&nbsp;'sales': ['mean', 'sum'],<br/>
-          &nbsp;&nbsp;'profit': 'std'<br/>
-          &#125;)
+        <div className="absolute bottom-1/3 left-32 text-purple-400 text-xs font-mono animate-pulse delay-2000">
+          {`# Advanced Analytics
+df_analysis = df.groupby('category').agg({
+    'revenue': ['mean', 'sum', 'std'],
+    'customers': 'count',
+    'profit_margin': lambda x: x.quantile(0.75)
+}).round(2)
+
+# Statistical Modeling
+from scipy import stats
+correlation_matrix = df.corr()
+p_values = stats.pearsonr(X, y)
+
+# Machine Learning Pipeline
+pipeline = Pipeline([
+    ('scaler', StandardScaler()),
+    ('selector', SelectKBest(k=10)),
+    ('classifier', RandomForestClassifier(n_estimators=100))
+])`}
         </div>
-        <div className="absolute bottom-20 right-32 text-gray-400 text-xs font-mono -rotate-6">
-          # Neural Network Training<br/>
-          for epoch in range(epochs):<br/>
-          &nbsp;&nbsp;loss = model.fit(X_train, y_train)<br/>
-          &nbsp;&nbsp;accuracy = evaluate(X_test, y_test)
+      </div>
+
+      {/* Mathematical Formulas Overlay */}
+      <div className="absolute inset-0 opacity-8 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-10 text-cyan-300 text-lg font-serif">
+          <div className="transform rotate-12 space-y-2">
+            <div>∇f(x) = Σᵢ ∂f/∂xᵢ êᵢ</div>
+            <div>σ(z) = 1/(1 + e⁻ᶻ)</div>
+            <div>L = -Σᵢ yᵢlog(ŷᵢ)</div>
+          </div>
         </div>
-        {/* Mathematical Formulas */}
-        <div className="absolute top-1/2 left-10 text-gray-400 text-sm font-mono rotate-12">
-          ∇f(x) = ∂f/∂x<br/>
-          σ(x) = 1/(1+e^(-x))<br/>
-          MSE = Σ(y-ŷ)²/n
+        <div className="absolute top-1/2 right-16 text-blue-300 text-lg font-serif">
+          <div className="transform -rotate-12 space-y-2">
+            <div>P(A|B) = P(B|A)×P(A)/P(B)</div>
+            <div>R² = 1 - SSᵣₑₛ/SSₜₒₜ</div>
+            <div>F₁ = 2×(P×R)/(P+R)</div>
+          </div>
         </div>
-        <div className="absolute top-1/3 right-10 text-gray-400 text-sm font-mono -rotate-12">
-          P(A|B) = P(B|A)×P(A)/P(B)<br/>
-          R² = 1 - SS_res/SS_tot<br/>
-          F₁ = 2×(precision×recall)/(precision+recall)
+        <div className="absolute bottom-1/4 left-1/3 text-purple-300 text-lg font-serif">
+          <div className="transform rotate-6 space-y-2">
+            <div>MSE = (1/n)Σᵢ(yᵢ - ŷᵢ)²</div>
+            <div>χ² = Σᵢ(Oᵢ - Eᵢ)²/Eᵢ</div>
+            <div>log(p/(1-p)) = β₀ + β₁x</div>
+          </div>
         </div>
       </div>
       
-      {/* Enhanced floating geometric shapes with data visualization elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-400/20 to-indigo-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-gradient-to-br from-purple-400/15 to-pink-600/15 rounded-full blur-2xl animate-pulse delay-500"></div>
-      
-      {/* Data visualization inspired shapes */}
-      <div className="absolute top-1/4 right-1/3 w-32 h-32 opacity-10">
-        <div className="w-full h-full border-2 border-blue-500 rounded-lg rotate-45 animate-spin-slow"></div>
-      </div>
-      <div className="absolute bottom-1/3 left-1/3 w-24 h-24 opacity-10">
-        <div className="w-full h-full bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-bounce-slow"></div>
-      </div>
-      
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-xl z-50 border-b border-gray-200/50 shadow-lg shadow-black/5">
+      {/* Enhanced Glassmorphism Navigation */}
+      <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-2xl z-50 border-b border-white/10 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            {/* Mobile Hamburger Button - Left Side */}
+            {/* Mobile Hamburger Button */}
             <div className="md:hidden">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={toggleMobileMenu}
-                className="p-2 hover:bg-blue-50 rounded-xl transition-all duration-300"
+                className="p-2 hover:bg-white/10 rounded-xl transition-all duration-300 text-white"
               >
                 {isMobileMenuOpen ? (
-                  <X className="h-6 w-6 text-gray-700" />
+                  <X className="h-6 w-6" />
                 ) : (
-                  <Menu className="h-6 w-6 text-gray-700" />
+                  <Menu className="h-6 w-6" />
                 )}
               </Button>
             </div>
 
-            {/* Logo - Left on desktop, right corner on mobile */}
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent md:order-first order-last">
+            {/* Enhanced Logo */}
+            <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent md:order-first order-last">
               KS
+              <span className="text-xs ml-1 text-cyan-400">Data Scientist</span>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            {/* Enhanced Desktop Navigation */}
+            <div className="hidden md:flex space-x-2">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-all duration-300 relative group px-4 py-2 rounded-lg hover:bg-blue-50"
+                  className="text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group px-6 py-3 rounded-xl hover:bg-white/5 backdrop-blur-sm border border-transparent hover:border-white/10"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-8"></span>
+                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 group-hover:w-8"></span>
                 </a>
               ))}
             </div>
 
-            {/* Desktop Social Links */}
+            {/* Enhanced Desktop Social Links */}
             <div className="hidden md:flex items-center space-x-3">
-              <Button variant="ghost" size="sm" className="p-3 hover:bg-blue-50 rounded-xl transition-all duration-300" asChild>
+              <Button variant="ghost" size="sm" className="p-3 hover:bg-white/10 rounded-xl transition-all duration-300 text-gray-300 hover:text-cyan-400" asChild>
                 <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5 text-gray-600 hover:text-blue-600 transition-colors" />
+                  <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="ghost" size="sm" className="p-3 hover:bg-gray-50 rounded-xl transition-all duration-300" asChild>
+              <Button variant="ghost" size="sm" className="p-3 hover:bg-white/10 rounded-xl transition-all duration-300 text-gray-300 hover:text-cyan-400" asChild>
                 <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-5 w-5 text-gray-600 hover:text-gray-900 transition-colors" />
+                  <Github className="h-5 w-5" />
                 </a>
               </Button>
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300" 
+                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white border-0 rounded-xl hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 transition-all duration-300" 
                 asChild
               >
                 <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -164,7 +233,6 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Mobile placeholder - now empty since logo moved to right */}
             <div className="md:hidden w-10"></div>
           </div>
 
@@ -174,40 +242,40 @@ const Index = () => {
               ? 'max-h-screen opacity-100 pb-6' 
               : 'max-h-0 opacity-0 overflow-hidden'
           }`}>
-            <div className="bg-white/95 backdrop-blur-md rounded-2xl mx-2 mb-4 shadow-xl border border-gray-100 overflow-hidden">
+            <div className="bg-black/30 backdrop-blur-xl rounded-2xl mx-2 mb-4 shadow-2xl border border-white/10 overflow-hidden">
               <div className="flex flex-col py-4">
                 {navItems.map((item, index) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={closeMobileMenu}
-                    className="text-gray-700 hover:text-blue-600 transition-all duration-300 px-6 py-4 hover:bg-blue-50 relative group"
+                    className="text-gray-300 hover:text-cyan-400 transition-all duration-300 px-6 py-4 hover:bg-white/5 relative group"
                     style={{
                       animationDelay: `${index * 50}ms`,
                       animation: isMobileMenuOpen ? 'slideInLeft 0.3s ease-out forwards' : 'none'
                     }}
                   >
                     <span className="font-medium">{item.label}</span>
-                    <div className="absolute left-6 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-8"></div>
+                    <div className="absolute left-6 bottom-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-300 group-hover:w-8"></div>
                   </a>
                 ))}
                 
                 {/* Mobile Social Links */}
-                <div className="flex items-center justify-center space-x-4 pt-6 mt-4 border-t border-gray-100">
-                  <Button variant="ghost" size="sm" className="p-3 hover:bg-blue-50 rounded-xl transition-all duration-300" asChild>
+                <div className="flex items-center justify-center space-x-4 pt-6 mt-4 border-t border-white/10">
+                  <Button variant="ghost" size="sm" className="p-3 hover:bg-white/10 rounded-xl transition-all duration-300 text-gray-300 hover:text-cyan-400" asChild>
                     <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="h-6 w-6 text-gray-600 hover:text-blue-600 transition-colors" />
+                      <Linkedin className="h-6 w-6" />
                     </a>
                   </Button>
-                  <Button variant="ghost" size="sm" className="p-3 hover:bg-gray-50 rounded-xl transition-all duration-300" asChild>
+                  <Button variant="ghost" size="sm" className="p-3 hover:bg-white/10 rounded-xl transition-all duration-300 text-gray-300 hover:text-cyan-400" asChild>
                     <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
-                      <Github className="h-6 w-6 text-gray-600 hover:text-gray-900 transition-colors" />
+                      <Github className="h-6 w-6" />
                     </a>
                   </Button>
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 rounded-xl hover:shadow-lg transition-all duration-300" 
+                    className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white border-0 rounded-xl hover:shadow-lg transition-all duration-300" 
                     asChild
                   >
                     <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -222,56 +290,60 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section with enhanced styling */}
+      {/* Hero Section */}
       <section id="hero" className="pt-20 relative">
         <Hero />
       </section>
 
-      {/* About Section with glass morphism effect */}
+      {/* About Section with Enhanced Glassmorphism */}
       <section id="about" className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-blue-50/60 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-purple-900/20 backdrop-blur-sm"></div>
         <div className="relative">
           <About />
         </div>
       </section>
 
-      {/* Skills Section with enhanced background */}
-      <section id="skills" className="py-24 bg-gradient-to-br from-white/80 via-blue-50/50 to-purple-50/50 relative">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <Skills />
+      {/* Skills Section */}
+      <section id="skills" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-purple-900/50 to-slate-900/80"></div>
+        <div className="relative">
+          <Skills />
+        </div>
       </section>
 
       {/* Projects Section */}
       <section id="projects" className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-l from-cyan-50/30 to-blue-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-l from-cyan-900/20 to-purple-900/20"></div>
         <div className="relative">
           <Projects />
         </div>
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-24 bg-gradient-to-br from-indigo-50/50 via-purple-50/30 to-pink-50/20 relative">
-        <Education />
+      <section id="education" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-slate-900/50 to-cyan-900/20"></div>
+        <div className="relative">
+          <Education />
+        </div>
       </section>
 
-      {/* Contact Section with advanced gradient */}
-      <section id="contact" className="py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-400/20 to-transparent"></div>
+      {/* Contact Section */}
+      <section id="contact" className="py-24 bg-gradient-to-br from-cyan-900 via-purple-900 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative">
           <Contact />
         </div>
       </section>
 
       {/* Enhanced Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+      <footer className="bg-gradient-to-br from-slate-900 via-black to-slate-900 text-white py-16 relative overflow-hidden border-t border-white/10">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/10 to-purple-900/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center md:text-left space-y-4">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Kodari Sravan</h3>
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Kodari Sravan</h3>
               <p className="text-gray-300 text-lg">Data Scientist & ML Engineer</p>
-              <p className="text-gray-400 text-sm leading-relaxed">Passionate about AI and Machine Learning, transforming data into actionable insights</p>
+              <p className="text-gray-400 text-sm leading-relaxed">Transforming data into intelligent solutions through advanced machine learning and deep learning techniques</p>
             </div>
             <div className="text-center md:text-left space-y-4">
               <h4 className="font-semibold text-lg text-white mb-6">Quick Links</h4>
@@ -280,7 +352,7 @@ const Index = () => {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 py-1"
+                    className="block text-gray-300 hover:text-cyan-400 hover:translate-x-2 transition-all duration-300 py-1"
                   >
                     {item.label}
                   </a>
@@ -290,22 +362,22 @@ const Index = () => {
             <div className="text-center md:text-left space-y-4">
               <h4 className="font-semibold text-lg text-white mb-6">Connect</h4>
               <div className="flex justify-center md:justify-start space-x-4">
-                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-cyan-400 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-6 w-6" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-cyan-400 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer">
                     <Github className="h-6 w-6" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-cyan-400 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://x.com/sravankodari1" target="_blank" rel="noopener noreferrer">
                     <XIcon className="h-6 w-6" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
+                <Button variant="ghost" size="sm" className="text-gray-300 hover:text-cyan-400 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="mailto:sravankodari4@gmail.com">
                     <Mail className="h-6 w-6" />
                   </a>
@@ -314,7 +386,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-700/50 mt-12 pt-8 text-center">
-            <p className="text-gray-400">&copy; 2025 Kodari Sravan. Crafted with passion and precision.</p>
+            <p className="text-gray-400">&copy; 2025 Kodari Sravan. Built with passion for data science and innovation.</p>
           </div>
         </div>
       </footer>
@@ -332,38 +404,19 @@ const Index = () => {
           }
         }
         
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
+        @keyframes float-0 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(180deg); }
         }
         
-        @keyframes bounce-slow {
-          0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-          }
-          40% {
-            transform: translateY(-10px);
-          }
-          60% {
-            transform: translateY(-5px);
-          }
+        @keyframes float-1 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-30px) rotate(-180deg); }
         }
         
-        .bg-grid-pattern {
-          background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
-          background-size: 20px 20px;
-        }
-        
-        .animate-spin-slow {
-          animation: spin-slow 8s linear infinite;
-        }
-        
-        .animate-bounce-slow {
-          animation: bounce-slow 3s ease-in-out infinite;
+        @keyframes float-2 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-25px) rotate(90deg); }
         }
         `}
       </style>
