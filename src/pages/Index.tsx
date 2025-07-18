@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Twitter, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import Hero from '@/components/Hero';
@@ -30,35 +30,75 @@ const Index = () => {
     { href: "#contact", label: "Contact" }
   ];
 
+  // Custom X (Twitter) Icon Component
+  const XIcon = ({ className }: { className?: string }) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-x-hidden">
-      {/* Advanced background effects with code/data patterns */}
+      {/* Enhanced background effects with ML/Data Science patterns */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-cyan-600/5"></div>
       <div className="absolute inset-0 opacity-5">
+        {/* Python/ML Code Patterns */}
         <div className="absolute top-10 left-10 text-gray-400 text-xs font-mono rotate-12">
-          const dataScientist = () =&gt; &#123;<br/>
-          &nbsp;&nbsp;return "AI & ML Expert";<br/>
-          &#125;
+          import pandas as pd<br/>
+          import numpy as np<br/>
+          from sklearn.model_selection import train_test_split<br/>
+          model = RandomForestClassifier()
         </div>
         <div className="absolute top-32 right-20 text-gray-400 text-xs font-mono -rotate-12">
-          import &#123; deepLearning &#125; from 'tensorflow';<br/>
-          model.compile(&#123; optimizer: 'adam' &#125;);
+          # Deep Learning Pipeline<br/>
+          model = Sequential([<br/>
+          &nbsp;&nbsp;Dense(128, activation='relu'),<br/>
+          &nbsp;&nbsp;Dropout(0.2),<br/>
+          &nbsp;&nbsp;Dense(10, activation='softmax')<br/>
+          ])
         </div>
         <div className="absolute bottom-40 left-20 text-gray-400 text-xs font-mono rotate-6">
-          SELECT * FROM insights<br/>
-          WHERE innovation = 'high';
+          # Data Analysis<br/>
+          df.groupby('category').agg(&#123;<br/>
+          &nbsp;&nbsp;'sales': ['mean', 'sum'],<br/>
+          &nbsp;&nbsp;'profit': 'std'<br/>
+          &#125;)
         </div>
         <div className="absolute bottom-20 right-32 text-gray-400 text-xs font-mono -rotate-6">
-          df.groupby('category').agg(&#123;<br/>
-          &nbsp;&nbsp;'value': 'mean'<br/>
-          &#125;)
+          # Neural Network Training<br/>
+          for epoch in range(epochs):<br/>
+          &nbsp;&nbsp;loss = model.fit(X_train, y_train)<br/>
+          &nbsp;&nbsp;accuracy = evaluate(X_test, y_test)
+        </div>
+        {/* Mathematical Formulas */}
+        <div className="absolute top-1/2 left-10 text-gray-400 text-sm font-mono rotate-12">
+          ∇f(x) = ∂f/∂x<br/>
+          σ(x) = 1/(1+e^(-x))<br/>
+          MSE = Σ(y-ŷ)²/n
+        </div>
+        <div className="absolute top-1/3 right-10 text-gray-400 text-sm font-mono -rotate-12">
+          P(A|B) = P(B|A)×P(A)/P(B)<br/>
+          R² = 1 - SS_res/SS_tot<br/>
+          F₁ = 2×(precision×recall)/(precision+recall)
         </div>
       </div>
       
-      {/* Floating geometric shapes */}
+      {/* Enhanced floating geometric shapes with data visualization elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-400/20 to-indigo-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       <div className="absolute top-1/2 left-0 w-64 h-64 bg-gradient-to-br from-purple-400/15 to-pink-600/15 rounded-full blur-2xl animate-pulse delay-500"></div>
+      
+      {/* Data visualization inspired shapes */}
+      <div className="absolute top-1/4 right-1/3 w-32 h-32 opacity-10">
+        <div className="w-full h-full border-2 border-blue-500 rounded-lg rotate-45 animate-spin-slow"></div>
+      </div>
+      <div className="absolute bottom-1/3 left-1/3 w-24 h-24 opacity-10">
+        <div className="w-full h-full bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-bounce-slow"></div>
+      </div>
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-xl z-50 border-b border-gray-200/50 shadow-lg shadow-black/5">
@@ -118,6 +158,7 @@ const Index = () => {
                 asChild
               >
                 <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
                   Resume
                 </a>
               </Button>
@@ -127,7 +168,7 @@ const Index = () => {
             <div className="md:hidden w-10"></div>
           </div>
 
-          {/* Advanced Mobile Menu */}
+          {/* Enhanced Mobile Menu */}
           <div className={`md:hidden transition-all duration-500 ease-in-out ${
             isMobileMenuOpen 
               ? 'max-h-screen opacity-100 pb-6' 
@@ -170,6 +211,7 @@ const Index = () => {
                     asChild
                   >
                     <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" />
                       Resume
                     </a>
                   </Button>
@@ -260,7 +302,7 @@ const Index = () => {
                 </Button>
                 <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
                   <a href="https://x.com/sravankodari1" target="_blank" rel="noopener noreferrer">
-                    <Twitter className="h-6 w-6" />
+                    <XIcon className="h-6 w-6" />
                   </a>
                 </Button>
                 <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10 p-3 rounded-xl transition-all duration-300 hover:scale-110" asChild>
@@ -290,9 +332,38 @@ const Index = () => {
           }
         }
         
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        @keyframes bounce-slow {
+          0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-10px);
+          }
+          60% {
+            transform: translateY(-5px);
+          }
+        }
+        
         .bg-grid-pattern {
           background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
           background-size: 20px 20px;
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+        
+        .animate-bounce-slow {
+          animation: bounce-slow 3s ease-in-out infinite;
         }
         `}
       </style>
