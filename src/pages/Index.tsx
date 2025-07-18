@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail, Menu, X, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
