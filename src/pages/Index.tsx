@@ -135,7 +135,7 @@ const Index = () => {
           <div className="space-y-1">
             <div>model.fit(X_train, y_train)</div>
             <div>accuracy = model.score(X_test, y_test)</div>
-            <div>print(f"Accuracy: {accuracy:.2f}")</div>
+            <div>print(f"Accuracy: {'{accuracy:.2f}'}")</div>
           </div>
         </div>
         <div className="absolute bottom-40 left-40 text-blue-400 text-sm font-mono animate-pulse delay-1000">
