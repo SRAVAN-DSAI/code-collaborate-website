@@ -58,7 +58,7 @@ const FloatingMessage = () => {
                 <X className="h-4 w-4" />
               </Button>
               <CardTitle className="text-xl font-bold text-gray-900">
-                Send me a message
+                Let's Have Some Discussion
               </CardTitle>
               <p className="text-sm text-gray-600">
                 Fill out the form below and I'll get back to you as soon as possible
