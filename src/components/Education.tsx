@@ -172,7 +172,7 @@ const Education = () => {
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center space-x-3">
                     {/* IIT Bombay Logo */}
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+                    <div className="w-16 h-12 flex items-center justify-center shadow-lg">
                       <img 
                         src="https://www.pngkey.com/png/detail/50-506039_iit-bombay-logo-png.png" 
                         alt="IIT Bombay Logo" 
