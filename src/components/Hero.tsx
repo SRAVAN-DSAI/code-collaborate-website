@@ -71,7 +71,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center space-x-2 bg-blue-50 px-3 py-2 rounded-full">
                 <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-blue-700 font-medium">10+ ML Projects</span>
+                <span className="text-sm text-blue-700 font-medium">10+ Projects</span>
               </div>
               <div className="flex items-center space-x-2 bg-purple-50 px-3 py-2 rounded-full">
                 <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
