@@ -1,27 +1,88 @@
 
-import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download, Sparkles, Star, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
+  const [typedText, setTypedText] = useState('');
+  const fullText = "Data Scientist & ML Engineer";
+  
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setTypedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+    
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div id="hero" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div id="hero" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden">
+      {/* Floating Elements */}
+      <div className="absolute top-10 left-10 animate-float">
+        <Code2 className="w-8 h-8 text-blue-500/30" />
+      </div>
+      <div className="absolute top-20 right-20 animate-float" style={{ animationDelay: '1s' }}>
+        <Sparkles className="w-6 h-6 text-purple-500/30" />
+      </div>
+      <div className="absolute bottom-32 left-20 animate-float" style={{ animationDelay: '2s' }}>
+        <Star className="w-5 h-5 text-cyan-500/30" />
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-              Hello, I'm{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Kodari Sravan
+        <div className="space-y-8 relative">
+          {/* Background gradient effect */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10 rounded-3xl blur-xl opacity-60"></div>
+          
+          <div className="space-y-6 relative">
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2 text-blue-600 font-medium">
+                <span className="w-8 h-px bg-gradient-to-r from-blue-600 to-purple-600"></span>
+                <span className="text-sm tracking-wider uppercase">Welcome to my portfolio</span>
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="block text-gray-900">Hello, I'm</span>
+                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent animate-glow">
+                  Kodari Sravan
+                </span>
+              </h1>
+            </div>
+            
+            <div className="text-xl lg:text-2xl text-gray-600 font-medium min-h-[2rem]">
+              <span className="border-r-2 border-blue-600 pr-1 animate-pulse">
+                {typedText}
               </span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-gray-600 font-medium">
-              Data Scientist & ML Engineer
+            </div>
+            
+            <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
+              Passionate about transforming complex data into 
+              <span className="text-blue-600 font-semibold"> actionable insights</span>. 
+              I specialize in machine learning, deep learning, and data visualization, building 
+              <span className="text-purple-600 font-semibold"> intelligent solutions</span> that drive 
+              <span className="text-cyan-600 font-semibold"> business innovation</span>.
             </p>
-            <p className="text-lg text-gray-500 max-w-lg leading-relaxed">
-              Passionate about turning complex data into actionable insights. I specialize in machine learning, 
-              deep learning, and data visualization, building strong predictive models and engaging data stories 
-              that spark innovation and create business value.
-            </p>
+
+            {/* Achievement highlights */}
+            <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex items-center space-x-2 bg-blue-50 px-3 py-2 rounded-full">
+                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                <span className="text-sm text-blue-700 font-medium">10+ ML Projects</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-purple-50 px-3 py-2 rounded-full">
+                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                <span className="text-sm text-purple-700 font-medium">1 Year Experience</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-green-50 px-3 py-2 rounded-full">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm text-green-700 font-medium">Available Now</span>
+              </div>
+            </div>
           </div>
           
           <div className="flex flex-wrap gap-4">

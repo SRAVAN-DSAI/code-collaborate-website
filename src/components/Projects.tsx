@@ -1,5 +1,5 @@
 
-import { ExternalLink, Github, Star, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, Star, ArrowRight, Brain, BarChart3, TrendingUp, MapPin, Car, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -14,7 +14,9 @@ const Projects = () => {
       github: 'https://github.com/sravan-dsai/housing-mexico',
       live: '#',
       category: 'ML Data',
-      featured: true
+      featured: true,
+      icon: BarChart3,
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Apartment Price Prediction - Buenos Aires',
@@ -24,7 +26,9 @@ const Projects = () => {
       github: 'https://github.com/sravan-dsai/apartment-sales',
       live: '#',
       category: 'ML',
-      featured: true
+      featured: true,
+      icon: MapPin,
+      color: 'from-purple-500 to-pink-500'
     },
     {
       title: 'Air Quality Forecasting - Nairobi',
@@ -34,7 +38,9 @@ const Projects = () => {
       github: 'https://github.com/sravan-dsai/air-quality-nairobi',
       live: '#',
       category: 'ML',
-      featured: false
+      featured: false,
+      icon: TrendingUp,
+      color: 'from-green-500 to-emerald-500'
     },
     {
       title: 'Neural Network Car Price Prediction',
@@ -44,7 +50,9 @@ const Projects = () => {
       github: 'https://github.com/sravan-dsai/car-price-prediction',
       live: '#',
       category: 'DL',
-      featured: false
+      featured: false,
+      icon: Car,
+      color: 'from-orange-500 to-red-500'
     },
     {
       title: 'Customer Segmentation Dashboard',
@@ -54,7 +62,9 @@ const Projects = () => {
       github: 'https://github.com/sravan-dsai/customer-segmentation',
       live: '#',
       category: 'Data',
-      featured: false
+      featured: false,
+      icon: Users,
+      color: 'from-indigo-500 to-purple-500'
     },
     {
       title: 'Bankruptcy Risk Assessment',
@@ -64,7 +74,9 @@ const Projects = () => {
       github: 'https://github.com/sravan-dsai/bankruptcy-poland',
       live: '#',
       category: 'ML',
-      featured: false
+      featured: false,
+      icon: Brain,
+      color: 'from-rose-500 to-pink-500'
     }
   ];
 
@@ -79,53 +91,78 @@ const Projects = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div className="relative overflow-hidden rounded-t-lg">
+          <Card key={index} className="group card-hover border-0 shadow-lg bg-white/60 backdrop-blur-sm overflow-hidden">
+            <div className="relative overflow-hidden">
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
               />
+              
+              {/* Gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-80 transition-opacity duration-300`}></div>
+              
+              {/* Project icon */}
+              <div className="absolute top-4 left-4 p-2 bg-white/90 backdrop-blur-sm rounded-xl group-hover:scale-110 transition-transform duration-300">
+                <project.icon className="h-5 w-5 text-gray-700" />
+              </div>
+              
               {project.featured && (
-                <div className="absolute top-3 right-3 bg-yellow-400 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold flex items-center">
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center animate-glow">
                   <Star className="h-3 w-3 mr-1" />
                   Featured
                 </div>
               )}
-              <div className="absolute top-3 left-3 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                {project.category}
+              
+              <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="flex space-x-2">
+                  <Button size="sm" variant="secondary" className="flex-1 bg-white/90 backdrop-blur-sm hover:bg-white" asChild>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </a>
+                  </Button>
+                  <Button size="sm" className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg" asChild>
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Demo
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
             
-            <CardHeader>
-              <CardTitle className="text-xl text-gray-900">{project.title}</CardTitle>
-              <CardDescription className="text-sm text-gray-600 line-clamp-3">
+            <CardHeader className="pb-3">
+              <div className="flex items-center justify-between">
+                <Badge variant="secondary" className={`bg-gradient-to-r ${project.color} text-white border-0`}>
+                  {project.category}
+                </Badge>
+                {project.featured && (
+                  <div className="flex items-center text-yellow-600">
+                    <Star className="h-4 w-4 mr-1 fill-current" />
+                    <span className="text-xs font-medium">Featured</span>
+                  </div>
+                )}
+              </div>
+              <CardTitle className="text-xl text-gray-900 group-hover:text-gray-700 transition-colors line-clamp-2">
+                {project.title}
+              </CardTitle>
+              <CardDescription className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
                 {project.description}
               </CardDescription>
             </CardHeader>
 
-            <CardContent className="space-y-4">
-              <div className="flex flex-wrap gap-1">
+            <CardContent className="pt-0">
+              <div className="flex flex-wrap gap-1.5">
                 {project.technologies.map((tech, techIndex) => (
-                  <Badge key={techIndex} variant="outline" className="text-xs">
+                  <Badge 
+                    key={techIndex} 
+                    variant="outline" 
+                    className="text-xs skill-badge hover:shadow-md transition-all duration-300"
+                  >
                     {tech}
                   </Badge>
                 ))}
-              </div>
-
-              <div className="flex space-x-3">
-                <Button variant="outline" size="sm" className="flex-1" asChild>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4 mr-2" />
-                    View Code
-                  </a>
-                </Button>
-                <Button size="sm" className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600" asChild>
-                  <a href={project.live} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live Demo
-                  </a>
-                </Button>
               </div>
             </CardContent>
           </Card>
