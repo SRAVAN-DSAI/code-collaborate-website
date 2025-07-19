@@ -1,4 +1,4 @@
-r o
+
 import { Code, Briefcase, GraduationCap, Award, Target, Users, TrendingUp } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
