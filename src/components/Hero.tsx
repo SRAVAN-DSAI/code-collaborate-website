@@ -76,7 +76,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-2 bg-purple-50 px-3 py-2 rounded-full">
                 <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-purple-700 font-medium">1 Year Experience</span>
+                <span className="text-sm text-purple-700 font-medium">Fresher</span>
               </div>
               <div className="flex items-center space-x-2 bg-green-50 px-3 py-2 rounded-full">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
