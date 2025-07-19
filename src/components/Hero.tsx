@@ -36,31 +36,31 @@ const Hero = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8 relative">
-          {/* Background gradient effect */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10 rounded-3xl blur-xl opacity-60"></div>
-          
           <div className="space-y-6 relative">
-            <div className="space-y-2">
+            <div className="space-y-4">
               <div className="flex items-center space-x-2 text-blue-600 font-medium">
                 <span className="w-8 h-px bg-gradient-to-r from-blue-600 to-purple-600"></span>
                 <span className="text-sm tracking-wider uppercase">Welcome to my portfolio</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="block text-gray-900">Hello, I'm</span>
-                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent animate-glow">
-                  Kodari Sravan
-                </span>
+                <span className="block text-gray-900 mb-2">Hello, I'm</span>
+                <div className="relative inline-block">
+                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10 rounded-2xl blur-lg opacity-60"></div>
+                  <span className="relative block bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent animate-glow">
+                    Kodari Sravan
+                  </span>
+                </div>
               </h1>
             </div>
             
-            <div className="text-xl lg:text-2xl text-gray-600 font-medium min-h-[2rem]">
+            <div className="text-xl lg:text-2xl text-gray-600 font-medium min-h-[3rem] mt-6">
               <span className="border-r-2 border-blue-600 pr-1 animate-pulse">
                 {typedText}
               </span>
             </div>
             
-            <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-2xl leading-relaxed mt-6">
               Passionate about transforming complex data into 
               <span className="text-blue-600 font-semibold"> actionable insights</span>. 
               I specialize in machine learning, deep learning, and data visualization, building 

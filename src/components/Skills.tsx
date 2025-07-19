@@ -1,5 +1,4 @@
 
-import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Brain, Database, BarChart3, Cloud, Code, Cpu } from 'lucide-react';
 
@@ -9,53 +8,65 @@ const Skills = () => {
       title: 'Programming & Data Analysis',
       icon: Code,
       skills: [
-        { name: 'Python', level: 95 },
-        { name: 'SQL', level: 90 },
-        { name: 'Data Analysis', level: 92 },
-        { name: 'Machine Learning', level: 88 },
-        { name: 'Deep Learning', level: 85 },
-        { name: 'Automation', level: 80 }
+        'Python', 'SQL', 'Data Analysis', 'Machine Learning', 'Deep Learning', 'Automation'
       ],
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      logos: [
+        { name: 'Python', icon: '🐍' },
+        { name: 'SQL', icon: '🗃️' },
+        { name: 'Pandas', icon: '🐼' },
+        { name: 'NumPy', icon: '🔢' },
+        { name: 'Jupyter', icon: '📓' },
+        { name: 'VSCode', icon: '💻' }
+      ]
     },
     {
       title: 'ML/DL Frameworks',
       icon: Brain,
       skills: [
-        { name: 'PyTorch', level: 88 },
-        { name: 'TensorFlow', level: 85 },
-        { name: 'Scikit-learn', level: 92 },
-        { name: 'Keras', level: 80 },
-        { name: 'Neural Networks', level: 85 },
-        { name: 'Model Development', level: 90 }
+        'PyTorch', 'TensorFlow', 'Scikit-learn', 'Keras', 'Neural Networks', 'Model Development'
       ],
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-purple-500 to-pink-500',
+      logos: [
+        { name: 'PyTorch', icon: '🔥' },
+        { name: 'TensorFlow', icon: '🧠' },
+        { name: 'Scikit-learn', icon: '🤖' },
+        { name: 'Keras', icon: '⚡' },
+        { name: 'OpenCV', icon: '👁️' },
+        { name: 'Hugging Face', icon: '🤗' }
+      ]
     },
     {
       title: 'Data Visualization & Big Data',
       icon: BarChart3,
       skills: [
-        { name: 'Plotly', level: 85 },
-        { name: 'Matplotlib', level: 90 },
-        { name: 'Seaborn', level: 88 },
-        { name: 'PySpark', level: 75 },
-        { name: 'Big Data Processing', level: 70 },
-        { name: 'Dashboard Creation', level: 82 }
+        'Plotly', 'Matplotlib', 'Seaborn', 'PySpark', 'Big Data Processing', 'Dashboard Creation'
       ],
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-green-500 to-emerald-500',
+      logos: [
+        { name: 'Plotly', icon: '📊' },
+        { name: 'Matplotlib', icon: '📈' },
+        { name: 'Seaborn', icon: '🎨' },
+        { name: 'Tableau', icon: '📋' },
+        { name: 'Power BI', icon: '⚡' },
+        { name: 'Apache Spark', icon: '⚡' }
+      ]
     },
     {
       title: 'Cloud & Tools',
       icon: Cloud,
       skills: [
-        { name: 'AWS', level: 78 },
-        { name: 'S3', level: 80 },
-        { name: 'EC2', level: 75 },
-        { name: 'Git', level: 90 },
-        { name: 'Version Control', level: 88 },
-        { name: 'Cloud Computing', level: 75 }
+        'AWS', 'S3', 'EC2', 'Git', 'Version Control', 'Cloud Computing'
       ],
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      logos: [
+        { name: 'AWS', icon: '☁️' },
+        { name: 'Git', icon: '🌿' },
+        { name: 'Docker', icon: '🐳' },
+        { name: 'Linux', icon: '🐧' },
+        { name: 'Google Cloud', icon: '🌤️' },
+        { name: 'GitHub', icon: '🐙' }
+      ]
     }
   ];
 
@@ -81,24 +92,18 @@ const Skills = () => {
                 </CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="space-y-4">
-              {category.skills.map((skill, skillIndex) => (
-                <div key={skillIndex} className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium text-gray-700">{skill.name}</span>
-                    <span className="text-xs text-gray-500">{skill.level}%</span>
+            <CardContent>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {category.logos.map((logo, logoIndex) => (
+                  <div 
+                    key={logoIndex} 
+                    className="flex flex-col items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-md"
+                  >
+                    <span className="text-2xl mb-2">{logo.icon}</span>
+                    <span className="text-xs font-medium text-gray-700 text-center">{logo.name}</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                    <div 
-                      className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out`}
-                      style={{ 
-                        width: `${skill.level}%`,
-                        animationDelay: `${skillIndex * 100}ms`
-                      }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </CardContent>
           </Card>
         ))}
