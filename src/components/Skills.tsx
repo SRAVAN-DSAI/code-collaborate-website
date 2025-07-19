@@ -12,12 +12,12 @@ const Skills = () => {
       ],
       color: 'from-blue-500 to-cyan-500',
       logos: [
-        { name: 'Python', icon: '🐍' },
-        { name: 'SQL', icon: '🗃️' },
-        { name: 'Pandas', icon: '🐼' },
-        { name: 'NumPy', icon: '🔢' },
-        { name: 'Jupyter', icon: '📓' },
-        { name: 'VSCode', icon: '💻' }
+        { name: 'Python', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+        { name: 'MySQL', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+        { name: 'Pandas', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
+        { name: 'NumPy', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
+        { name: 'Jupyter', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg' },
+        { name: 'VSCode', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' }
       ]
     },
     {
@@ -28,12 +28,12 @@ const Skills = () => {
       ],
       color: 'from-purple-500 to-pink-500',
       logos: [
-        { name: 'PyTorch', icon: '🔥' },
-        { name: 'TensorFlow', icon: '🧠' },
-        { name: 'Scikit-learn', icon: '🤖' },
-        { name: 'Keras', icon: '⚡' },
-        { name: 'OpenCV', icon: '👁️' },
-        { name: 'Hugging Face', icon: '🤗' }
+        { name: 'PyTorch', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
+        { name: 'TensorFlow', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
+        { name: 'Scikit-learn', iconUrl: 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/main/doc/logos/scikit-learn-logo-small.png' },
+        { name: 'Keras', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg' },
+        { name: 'OpenCV', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' },
+        { name: 'Anaconda', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original.svg' }
       ]
     },
     {
@@ -44,12 +44,12 @@ const Skills = () => {
       ],
       color: 'from-green-500 to-emerald-500',
       logos: [
-        { name: 'Plotly', icon: '📊' },
-        { name: 'Matplotlib', icon: '📈' },
-        { name: 'Seaborn', icon: '🎨' },
-        { name: 'Tableau', icon: '📋' },
-        { name: 'Power BI', icon: '⚡' },
-        { name: 'Apache Spark', icon: '⚡' }
+        { name: 'Plotly', iconUrl: 'https://images.plot.ly/logo/new-branding/plotly-logomark.png' },
+        { name: 'Matplotlib', iconUrl: 'https://matplotlib.org/stable/_images/sphx_glr_logos2_003.png' },
+        { name: 'Seaborn', iconUrl: 'https://seaborn.pydata.org/_images/logo-mark-lightbg.svg' },
+        { name: 'Tableau', iconUrl: 'https://cdn.worldvectorlogo.com/logos/tableau-software.svg' },
+        { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg' },
+        { name: 'Apache Spark', iconUrl: 'https://spark.apache.org/images/spark-logo-trademark.png' }
       ]
     },
     {
@@ -60,12 +60,12 @@ const Skills = () => {
       ],
       color: 'from-orange-500 to-red-500',
       logos: [
-        { name: 'AWS', icon: '☁️' },
-        { name: 'Git', icon: '🌿' },
-        { name: 'Docker', icon: '🐳' },
-        { name: 'Linux', icon: '🐧' },
-        { name: 'Google Cloud', icon: '🌤️' },
-        { name: 'GitHub', icon: '🐙' }
+        { name: 'AWS', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
+        { name: 'Git', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+        { name: 'Docker', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+        { name: 'Linux', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
+        { name: 'Google Cloud', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
+        { name: 'GitHub', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' }
       ]
     }
   ];
@@ -99,7 +99,15 @@ const Skills = () => {
                     key={logoIndex} 
                     className="flex flex-col items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-md"
                   >
-                    <span className="text-2xl mb-2">{logo.icon}</span>
+                    <img 
+                      src={logo.iconUrl} 
+                      alt={logo.name}
+                      className="w-8 h-8 mb-2 object-contain"
+                      onError={(e) => {
+                        // Fallback to a generic icon if image fails to load
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
                     <span className="text-xs font-medium text-gray-700 text-center">{logo.name}</span>
                   </div>
                 ))}
