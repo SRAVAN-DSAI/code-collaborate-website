@@ -18,7 +18,7 @@ const About = () => {
           <span className="text-blue-600 font-medium text-sm tracking-wider uppercase">About Me</span>
           <span className="w-8 h-px bg-gradient-to-r from-purple-600 to-blue-600"></span>
         </div>
-        <h2 className="text-3xl md:text-3xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6">
+        <h2 className="text-5xl md:text-2xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6">
           Transforming Data into Impact
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
