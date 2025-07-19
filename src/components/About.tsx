@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 const About = () => {
   const stats = [
     { icon: Code, label: 'Projects Completed', value: '10+', color: 'from-blue-500 to-cyan-500' },
-    { icon: Briefcase, label: 'Years of Experience', value: '1', color: 'from-purple-500 to-pink-500' },
+    { icon: Briefcase, label: 'Years of Experience', value: 'Fresher', color: 'from-purple-500 to-pink-500' },
     { icon: GraduationCap, label: 'Certifications', value: '3', color: 'from-green-500 to-emerald-500' },
     { icon: TrendingUp, label: 'Success Rate', value: '100%', color: 'from-orange-500 to-red-500' },
   ];
