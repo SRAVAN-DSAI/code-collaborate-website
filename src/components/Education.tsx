@@ -172,8 +172,12 @@ const Education = () => {
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center space-x-3">
                     {/* IIT Bombay Logo */}
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white font-bold text-lg">IIT</span>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+                      <img 
+                        src="https://www.pngkey.com/png/detail/50-506039_iit-bombay-logo-png.png" 
+                        alt="IIT Bombay Logo" 
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <Badge variant="outline" className="text-xs bg-indigo-50 text-indigo-700 border-indigo-200">
                       {course.year}
