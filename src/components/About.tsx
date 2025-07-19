@@ -7,7 +7,7 @@ const About = () => {
     { icon: Code, label: 'Projects Completed', value: '10+', color: 'from-blue-500 to-cyan-500' },
     { icon: Briefcase, label: 'Years of Experience', value: '1', color: 'from-purple-500 to-pink-500' },
     { icon: GraduationCap, label: 'Certifications', value: '3', color: 'from-green-500 to-emerald-500' },
-    { icon: TrendingUp, label: 'Success Rate', value: '95%', color: 'from-orange-500 to-red-500' },
+    { icon: TrendingUp, label: 'Success Rate', value: '100%', color: 'from-orange-500 to-red-500' },
   ];
 
   return (
@@ -18,7 +18,7 @@ const About = () => {
           <span className="text-blue-600 font-medium text-sm tracking-wider uppercase">About Me</span>
           <span className="w-8 h-px bg-gradient-to-r from-purple-600 to-blue-600"></span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6">
+        <h2 className="text-4xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6">
           Transforming Data into Impact
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
