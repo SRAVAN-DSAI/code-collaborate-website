@@ -1,4 +1,3 @@
-
 import { ArrowRight, Github, Linkedin, Mail, Download, Sparkles, Star, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
