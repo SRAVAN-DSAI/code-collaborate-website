@@ -224,7 +224,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section with enhanced styling */}
-      <section id="hero" className="pt-20 relative">
+      <section id="hero" className="pt-10 relative">
         <Hero />
       </section>
 
