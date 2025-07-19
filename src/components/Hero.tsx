@@ -22,7 +22,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div id="hero" className="max-w-7xl mx-auto px-1 sm:px-3 lg:px-5 py-20 relative overflow-hidden">
+    <div id="hero" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden">
       {/* Floating Elements */}
       <div className="absolute top-10 left-10 animate-float">
         <Code2 className="w-8 h-8 text-blue-500/30" />
