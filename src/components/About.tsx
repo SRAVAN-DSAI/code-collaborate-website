@@ -36,7 +36,7 @@ const About = () => {
             </h3>
             <div className="space-y-4">
               <p className="text-gray-600 leading-relaxed text-lg">
-                With <span className="font-semibold text-blue-600">1 year of experience</span> in data science and machine learning, 
+                With <span className="font-semibold text-blue-600">1 year of learning</span> in data science and machine learning, 
                 I've had the privilege of working on diverse projects, from <span className="font-semibold text-purple-600">predictive modeling</span> to 
                 <span className="font-semibold text-green-600"> interactive data visualizations</span>. My journey began with a curiosity about 
                 uncovering hidden patterns in data during my B.Tech in Civil Engineering.
