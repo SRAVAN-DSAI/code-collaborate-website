@@ -2,34 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Data Engineering Theme Animations */
-@keyframes dataFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(5deg); }
+/* Custom animations and effects */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
-@keyframes pipelineFlow {
-  0% { transform: translateX(-100%) scale(0.8); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateX(100%) scale(0.8); opacity: 0; }
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
 }
 
-@keyframes nodeGlow {
-  0%, 100% { box-shadow: 0 0 20px hsl(var(--data-flow) / 0.3); }
-  50% { box-shadow: 0 0 35px hsl(var(--data-flow) / 0.6); }
-}
-
-@keyframes matrixRain {
-  0% { transform: translateY(-100%); opacity: 1; }
-  100% { transform: translateY(100vh); opacity: 0; }
-}
-
-@keyframes deploymentPulse {
-  0%, 100% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.1); opacity: 1; }
-}
-
-@keyframes codeStream {
+@keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
@@ -43,245 +27,145 @@
   50% { border-color: transparent; }
 }
 
-/* Data Engineering Animation Classes */
-.animate-data-float {
-  animation: dataFloat 4s ease-in-out infinite;
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
-.animate-pipeline-flow {
-  animation: pipelineFlow 3s linear infinite;
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
 }
 
-.animate-node-glow {
-  animation: nodeGlow 2.5s ease-in-out infinite;
-}
-
-.animate-deployment-pulse {
-  animation: deploymentPulse 2s ease-in-out infinite;
-}
-
-.animate-matrix-rain {
-  animation: matrixRain 4s linear infinite;
-}
-
-.animate-code-stream {
-  animation: codeStream 2s ease-in-out infinite;
-}
-
-/* Data Engineering UI Components */
-.data-gradient {
-  background: var(--gradient-data);
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.ml-gradient {
-  background: var(--gradient-ml);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.pipeline-gradient {
-  background: var(--gradient-pipeline);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.card-hover {
+  transition: all 0.3s ease;
 }
 
-.tech-glass {
-  background: hsl(var(--card) / 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid hsl(var(--border) / 0.5);
-  box-shadow: var(--shadow-card);
-}
-
-.data-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid hsl(var(--border));
-  background: hsl(var(--card));
-}
-
-.data-card:hover {
+.card-hover:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-data);
-  border-color: hsl(var(--data-flow) / 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.pipeline-node {
+.skill-badge {
   position: relative;
   overflow: hidden;
-  background: var(--gradient-tech);
-  border-radius: 50%;
 }
 
-.pipeline-node::before {
+.skill-badge::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, hsl(var(--primary-foreground) / 0.2), transparent);
-  transition: left 0.6s ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
 }
 
-.pipeline-node:hover::before {
+.skill-badge:hover::before {
   left: 100%;
 }
 
-.data-flow-line {
-  position: relative;
-  background: linear-gradient(90deg, hsl(var(--data-flow)), hsl(var(--ml-primary)));
-  height: 2px;
-  overflow: hidden;
-}
-
-.data-flow-line::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, hsl(var(--primary-foreground) / 0.8), transparent);
-  animation: codeStream 2s ease-in-out infinite;
-}
-
-/* Data Engineering & ML Theme Design System
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Data Engineering Color Palette */
-    --background: 215 25% 97%;
-    --foreground: 215 20% 15%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 20% 15%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 20% 15%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Tech-focused primary colors */
-    --primary: 215 85% 25%;
-    --primary-foreground: 0 0% 98%;
-    --primary-light: 215 75% 35%;
-    --primary-dark: 215 85% 15%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Data pipeline secondary colors */
-    --secondary: 195 40% 88%;
-    --secondary-foreground: 215 85% 25%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    /* Muted tech tones */
-    --muted: 215 15% 92%;
-    --muted-foreground: 215 20% 45%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* ML accent colors */
-    --accent: 195 40% 88%;
-    --accent-foreground: 215 85% 25%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    /* Error states */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    /* Borders and inputs */
-    --border: 215 20% 85%;
-    --input: 215 20% 85%;
-    --ring: 215 85% 25%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Data theme specific colors */
-    --data-flow: 195 75% 45%;
-    --ml-primary: 270 75% 55%;
-    --pipeline: 145 65% 45%;
-    --deployment: 30 85% 55%;
-    --analytics: 310 65% 55%;
+    --sidebar-background: 0 0% 98%;
 
-    /* Gradients for data theme */
-    --gradient-data: linear-gradient(135deg, hsl(215 85% 25%), hsl(195 75% 45%));
-    --gradient-ml: linear-gradient(135deg, hsl(270 75% 55%), hsl(310 65% 55%));
-    --gradient-pipeline: linear-gradient(135deg, hsl(145 65% 45%), hsl(195 75% 45%));
-    --gradient-tech: linear-gradient(135deg, hsl(215 85% 25%), hsl(270 75% 55%));
+    --sidebar-foreground: 240 5.3% 26.1%;
 
-    /* Shadows with tech theme */
-    --shadow-data: 0 4px 20px hsl(215 85% 25% / 0.15);
-    --shadow-glow: 0 0 30px hsl(195 75% 45% / 0.3);
-    --shadow-card: 0 8px 32px hsl(215 20% 15% / 0.08);
+    --sidebar-primary: 240 5.9% 10%;
 
-    /* Sidebar */
-    --sidebar-background: 215 25% 98%;
-    --sidebar-foreground: 215 20% 25%;
-    --sidebar-primary: 215 85% 25%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 215 15% 94%;
-    --sidebar-accent-foreground: 215 85% 25%;
-    --sidebar-border: 215 20% 88%;
-    --sidebar-ring: 215 85% 25%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Dark mode for data engineering theme */
-    --background: 215 25% 8%;
-    --foreground: 215 15% 88%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 215 25% 10%;
-    --card-foreground: 215 15% 88%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 215 25% 10%;
-    --popover-foreground: 215 15% 88%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 195 75% 55%;
-    --primary-foreground: 215 25% 8%;
-    --primary-light: 195 75% 65%;
-    --primary-dark: 195 75% 45%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 215 25% 15%;
-    --secondary-foreground: 215 15% 88%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 215 25% 12%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 215 25% 15%;
-    --accent-foreground: 215 15% 88%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 55%;
-    --destructive-foreground: 215 15% 88%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 215 25% 18%;
-    --input: 215 25% 18%;
-    --ring: 195 75% 55%;
-
-    /* Dark theme data colors */
-    --data-flow: 195 75% 55%;
-    --ml-primary: 270 75% 65%;
-    --pipeline: 145 65% 55%;
-    --deployment: 30 85% 65%;
-    --analytics: 310 65% 65%;
-
-    /* Dark gradients */
-    --gradient-data: linear-gradient(135deg, hsl(195 75% 55%), hsl(270 75% 65%));
-    --gradient-ml: linear-gradient(135deg, hsl(270 75% 65%), hsl(310 65% 65%));
-    --gradient-pipeline: linear-gradient(135deg, hsl(145 65% 55%), hsl(195 75% 55%));
-    --gradient-tech: linear-gradient(135deg, hsl(195 75% 55%), hsl(270 75% 65%));
-
-    /* Dark shadows */
-    --shadow-data: 0 4px 20px hsl(0 0% 0% / 0.4);
-    --shadow-glow: 0 0 30px hsl(195 75% 55% / 0.4);
-    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
-
-    /* Dark sidebar */
-    --sidebar-background: 215 25% 6%;
-    --sidebar-foreground: 215 15% 85%;
-    --sidebar-primary: 195 75% 55%;
-    --sidebar-primary-foreground: 215 25% 8%;
-    --sidebar-accent: 215 25% 12%;
-    --sidebar-accent-foreground: 215 15% 85%;
-    --sidebar-border: 215 25% 15%;
-    --sidebar-ring: 195 75% 55%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
