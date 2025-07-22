@@ -7,16 +7,16 @@ import { Badge } from '@/components/ui/badge';
 const Projects = () => {
   const projects = [
     {
-      title: 'Housing Market Analysis - Mexico',
-      description: 'Comprehensive analysis of Mexico\'s housing market using machine learning techniques to predict property values and market trends.',
-      image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80',
-      technologies: ['Python', 'Machine Learning', 'Data Analysis', 'Pandas', 'Scikit-learn'],
-      github: 'https://github.com/sravan-dsai/housing-mexico',
-      live: '#',
-      category: 'ML Data',
-      featured: true,
-      icon: BarChart3,
-      color: 'from-blue-500 to-cyan-500'
+      title: 'NLP News Article Classification Pipeline',
+      description: 'An end-to-end NLP pipeline for classifying news articles using Apache Spark for data processing and Hugging Face Transformers for model training. Features include data ingestion, cleaning, model training, evaluation, and a live Streamlit demo.',
+      image: 'https://images.unsplash.com/photo-1504711432889-ac0c4583cded?auto=format&fit=crop&q=80&w=1770', // A suitable image for news/NLP
+      technologies: ['Python', 'Apache Spark', 'PySpark', 'Hugging Face Transformers', 'PyTorch', 'Streamlit', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn'],
+      github: 'https://github.com/SRAVAN-DSAI/nlp_news_pipeline',
+      live: 'https://nlp-news-pipeline.streamlit.app/', // Your live Streamlit app URL
+      category: 'NLP ML', // Or 'MLOps' if you emphasize deployment
+      featured: true, // Assuming you want to feature it
+      icon: 'BsNewspaper', // A relevant icon (assuming this is from a library like react-icons/bs)
+      color: 'from-green-500 to-teal-500' // A color scheme that fits the NLP theme
     },
     {
       title: 'Apartment Price Prediction - Buenos Aires',
