@@ -7,16 +7,16 @@ import { Badge } from '@/components/ui/badge';
 const Projects = () => {
   const projects = [
     {
-      title: 'NLP News Article Classification Pipeline',
-      description: 'An end-to-end NLP pipeline for classifying news articles using Apache Spark for data processing and Hugging Face Transformers for model training. Features include data ingestion, cleaning, model training, evaluation, and a live Streamlit demo.',
-      image: 'https://www.istockphoto.com/photo/natural-language-processing-nlp-gm2050481773-563250879?auto=format&fit=crop&q=80&w=1770', // A suitable image for news/NLP
-      technologies: ['Python', 'Apache Spark', 'PySpark', 'Hugging Face Transformers', 'PyTorch', 'Streamlit', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn'],
-      github: 'https://github.com/SRAVAN-DSAI/nlp_news_pipeline',
-      live: 'https://nlp-news-pipeline.streamlit.app/', // Your live Streamlit app URL
-      category: 'NLP ML', // Or 'MLOps' if you emphasize deployment
-      featured: true, // Assuming you want to feature it
-      icon: 'BsNewspaper', // A relevant icon (assuming this is from a library like react-icons/bs)
-      color: 'from-green-500 to-teal-500' // A color scheme that fits the NLP theme
+      "title": "NLP News Article Classification Pipeline",
+      "description": "An end-to-end NLP pipeline for classifying news articles using Apache Spark for data processing and Hugging Face Transformers for model training. Features include data ingestion, cleaning, model training, evaluation, and a live Streamlit demo.",
+      "image": "https://images.unsplash.com/photo-1600585154526-990d71ebb9b7?auto=format&fit=crop&q=80&w=1770",
+      "technologies": ["Python", "Apache Spark", "PySpark", "Hugging Face Transformers", "PyTorch", "Streamlit", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn"],
+      "github": "https://github.com/SRAVAN-DSAI/nlp_news_pipeline",
+      "live": "https://nlp-news-pipeline.streamlit.app/",
+      "category": "NLP ML",
+      "featured": true,
+      "icon": "BsNewspaper",
+      "color": "from-green-500 to-teal-500"
     },
     {
       title: 'Apartment Price Prediction - Buenos Aires',
