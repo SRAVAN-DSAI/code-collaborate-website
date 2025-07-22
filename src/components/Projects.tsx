@@ -9,7 +9,7 @@ const Projects = () => {
     {
       "title": "NLP News Article Classification Pipeline",
       "description": "An end-to-end NLP pipeline for classifying news articles using Apache Spark for data processing and Hugging Face Transformers for model training. Features include data ingestion, cleaning, model training, evaluation, and a live Streamlit demo.",
-      "image": "https://images.unsplash.com/photo-1600585154526-990d71ebb9b7?auto=format&fit=crop&q=80&w=1770",
+      "image": "https://www.searchenginejournal.com/wp-content/uploads/2020/08/an-introduction-to-natural-language-processing-with-python-for-seos-5f3519eeb8368.png?auto=format&fit=crop&q=80&w=1770",
       "technologies": ["Python", "Apache Spark", "PySpark", "Hugging Face Transformers", "PyTorch", "Streamlit", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn"],
       "github": "https://github.com/SRAVAN-DSAI/nlp_news_pipeline",
       "live": "https://nlp-news-pipeline.streamlit.app/",
