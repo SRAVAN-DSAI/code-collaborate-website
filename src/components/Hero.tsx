@@ -95,7 +95,7 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-4 pt-6 max-w-md">
               <div className="text-center p-3 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50">
                 <div className="text-2xl font-bold text-blue-600">15+</div>
-                <div className="text-xs text-gray-600">ML Projects</div>
+                <div className="text-xs text-gray-600">Projects</div>
               </div>
               <div className="text-center p-3 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50">
                 <div className="text-2xl font-bold text-purple-600">5+</div>
