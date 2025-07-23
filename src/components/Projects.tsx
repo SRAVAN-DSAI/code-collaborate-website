@@ -1,5 +1,5 @@
 
-import { ExternalLink, Github, Star, ArrowRight, Brain, BarChart3, TrendingUp, MapPin, Car, Users, Newspaper } from 'lucide-react';
+import { ExternalLink, Github, Star, ArrowRight, Brain, BarChart3, TrendingUp, MapPin, Car, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -7,16 +7,16 @@ import { Badge } from '@/components/ui/badge';
 const Projects = () => {
   const projects = [
     {
-      "title": "NLP News Article Classification Pipeline",
-      "description": "An end-to-end NLP pipeline for classifying news articles using Apache Spark for data processing and Hugging Face Transformers for model training. Features include data ingestion, cleaning, model training, evaluation, and a live Streamlit demo.",
-      "image": "https://www.searchenginejournal.com/wp-content/uploads/2020/08/an-introduction-to-natural-language-processing-with-python-for-seos-5f3519eeb8368.png?auto=format&fit=crop&q=80&w=1770",
-      "technologies": ["Python", "Apache Spark", "PySpark", "Hugging Face Transformers", "PyTorch", "Streamlit", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn"],
-      "github": "https://github.com/SRAVAN-DSAI/nlp_news_pipeline",
-      "live": "https://nlp-news-pipeline.streamlit.app/",
-      "category": "NLP ML",
-      "featured": true,
-      "icon": Newspaper,
-      "color": "from-green-500 to-teal-500"
+      title: 'Housing Market Analysis - Mexico',
+      description: 'Comprehensive analysis of Mexico\'s housing market using machine learning techniques to predict property values and market trends.',
+      image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80',
+      technologies: ['Python', 'Machine Learning', 'Data Analysis', 'Pandas', 'Scikit-learn'],
+      github: 'https://github.com/sravan-dsai/housing-mexico',
+      live: '#',
+      category: 'ML Data',
+      featured: true,
+      icon: BarChart3,
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Apartment Price Prediction - Buenos Aires',
@@ -122,7 +122,7 @@ const Projects = () => {
                       Code
                     </a>
                   </Button>
-                  <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-lg" asChild>
+                  <Button size="sm" className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg" asChild>
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Demo
