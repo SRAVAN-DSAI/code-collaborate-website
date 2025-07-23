@@ -1,5 +1,6 @@
-import { ArrowRight, Github, Linkedin, Mail, Download, Sparkles, Star, Code2 } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download, Sparkles, Star, Code2, Database, Brain, BarChart3, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { useEffect, useState } from 'react';
 
 const Hero = () => {
@@ -22,15 +23,18 @@ const Hero = () => {
 
   return (
     <div id="hero" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden">
-      {/* Floating Elements */}
+      {/* Enhanced Floating Elements with ML/Data Science Icons */}
       <div className="absolute top-10 left-10 animate-float">
-        <Code2 className="w-8 h-8 text-blue-500/30" />
+        <Database className="w-8 h-8 text-emerald-500/30" />
       </div>
       <div className="absolute top-20 right-20 animate-float" style={{ animationDelay: '1s' }}>
-        <Sparkles className="w-6 h-6 text-purple-500/30" />
+        <Brain className="w-6 h-6 text-purple-500/30" />
       </div>
       <div className="absolute bottom-32 left-20 animate-float" style={{ animationDelay: '2s' }}>
-        <Star className="w-5 h-5 text-cyan-500/30" />
+        <BarChart3 className="w-5 h-5 text-orange-500/30" />
+      </div>
+      <div className="absolute top-1/2 right-10 animate-float" style={{ animationDelay: '3s' }}>
+        <Zap className="w-6 h-6 text-yellow-500/30" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -67,19 +71,39 @@ const Hero = () => {
               <span className="text-cyan-600 font-semibold"> business innovation</span>.
             </p>
 
-            {/* Achievement highlights */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <div className="flex items-center space-x-2 bg-blue-50 px-3 py-2 rounded-full">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-blue-700 font-medium">10+ Projects</span>
+            {/* Enhanced Achievement highlights with ML pipeline stages */}
+            <div className="flex flex-wrap gap-3 pt-6">
+              <Badge className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white border-0 px-4 py-2 hover:shadow-lg transition-all duration-300">
+                <Database className="w-4 h-4 mr-2" />
+                Data Engineering
+              </Badge>
+              <Badge className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 px-4 py-2 hover:shadow-lg transition-all duration-300">
+                <BarChart3 className="w-4 h-4 mr-2" />
+                ML Analytics
+              </Badge>
+              <Badge className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white border-0 px-4 py-2 hover:shadow-lg transition-all duration-300">
+                <Brain className="w-4 h-4 mr-2" />
+                Deep Learning
+              </Badge>
+              <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 px-4 py-2 hover:shadow-lg transition-all duration-300">
+                <Zap className="w-4 h-4 mr-2" />
+                MLOps
+              </Badge>
+            </div>
+
+            {/* Pipeline Stats */}
+            <div className="grid grid-cols-3 gap-4 pt-6 max-w-md">
+              <div className="text-center p-3 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50">
+                <div className="text-2xl font-bold text-blue-600">15+</div>
+                <div className="text-xs text-gray-600">ML Projects</div>
               </div>
-              <div className="flex items-center space-x-2 bg-purple-50 px-3 py-2 rounded-full">
-                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-purple-700 font-medium">Fresher</span>
+              <div className="text-center p-3 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50">
+                <div className="text-2xl font-bold text-purple-600">5+</div>
+                <div className="text-xs text-gray-600">Frameworks</div>
               </div>
-              <div className="flex items-center space-x-2 bg-green-50 px-3 py-2 rounded-full">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-green-700 font-medium">Available Now</span>
+              <div className="text-center p-3 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50">
+                <div className="text-2xl font-bold text-green-600">95%</div>
+                <div className="text-xs text-gray-600">Accuracy</div>
               </div>
             </div>
           </div>
@@ -147,11 +171,17 @@ const Hero = () => {
               Available for opportunities!
             </div>
             
-            {/* Tech stack floating badges */}
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Python</div>
-              <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">ML</div>
-              <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">AI</div>
+            {/* Enhanced Tech stack floating badges */}
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              <Badge className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white text-xs border-0 shadow-lg">
+                Spark
+              </Badge>
+              <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs border-0 shadow-lg">
+                Hugging Face
+              </Badge>
+              <Badge className="bg-gradient-to-r from-red-500 to-red-600 text-white text-xs border-0 shadow-lg">
+                Streamlit
+              </Badge>
             </div>
           </div>
         </div>
