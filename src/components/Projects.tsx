@@ -1,5 +1,5 @@
 
-import { ExternalLink, Github, Star, ArrowRight, Brain, BarChart3, TrendingUp, MapPin, Car, Users } from 'lucide-react';
+import { ExternalLink, Github, Star, ArrowRight, Brain, BarChart3, TrendingUp, MapPin, Car, Users, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -15,7 +15,7 @@ const Projects = () => {
       "live": "https://nlp-news-pipeline.streamlit.app/",
       "category": "NLP ML",
       "featured": true,
-      "icon": "BsNewspaper",
+      "icon": Newspaper,
       "color": "from-green-500 to-teal-500"
     },
     {
@@ -122,7 +122,7 @@ const Projects = () => {
                       Code
                     </a>
                   </Button>
-                  <Button size="sm" className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg" asChild>
+                  <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-lg" asChild>
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Demo

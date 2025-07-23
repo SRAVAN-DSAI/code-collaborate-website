@@ -37,16 +37,16 @@ const Hero = () => {
         <div className="space-y-8 relative">
           <div className="space-y-6 relative">
             <div className="space-y-4">
-              <div className="flex items-center space-x-2 text-blue-600 font-medium">
-                <span className="w-8 h-px bg-gradient-to-r from-blue-600 to-purple-600"></span>
+            <div className="flex items-center space-x-2 text-primary font-medium">
+                <span className="w-8 h-px bg-gradient-to-r from-primary to-secondary"></span>
                 <span className="text-sm tracking-wider uppercase">Welcome to my portfolio</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="block text-gray-900 mb-2">Hello, I'm</span>
                 <div className="relative inline-block">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10 rounded-2xl blur-lg opacity-60"></div>
-                  <span className="relative block bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent animate-glow">
+                  <div className="absolute -inset-2 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-2xl blur-lg opacity-60"></div>
+                  <span className="relative block text-gradient animate-glow">
                     Kodari Sravan
                   </span>
                 </div>
@@ -54,32 +54,32 @@ const Hero = () => {
             </div>
             
             <div className="text-xl lg:text-2xl text-gray-600 font-medium min-h-[3rem] mt-6">
-              <span className="border-r-2 border-blue-600 pr-1 animate-pulse">
+              <span className="border-r-2 border-primary pr-1 animate-pulse">
                 {typedText}
               </span>
             </div>
             
             <p className="text-lg text-gray-600 max-w-2xl leading-relaxed mt-6">
               Passionate about transforming complex data into 
-              <span className="text-blue-600 font-semibold"> actionable insights</span>. 
+              <span className="text-primary font-semibold"> actionable insights</span>. 
               I specialize in machine learning, deep learning, and data visualization, building 
-              <span className="text-purple-600 font-semibold"> intelligent solutions</span> that drive 
-              <span className="text-cyan-600 font-semibold"> business innovation</span>.
+              <span className="ml-gradient font-semibold"> intelligent solutions</span> that drive 
+              <span className="pipeline-gradient font-semibold"> business innovation</span>.
             </p>
 
             {/* Achievement highlights */}
             <div className="flex flex-wrap gap-4 pt-4">
-              <div className="flex items-center space-x-2 bg-blue-50 px-3 py-2 rounded-full">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-blue-700 font-medium">10+ Projects</span>
+              <div className="flex items-center space-x-2 bg-primary/10 px-3 py-2 rounded-full">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                <span className="text-sm text-primary font-medium">10+ Projects</span>
               </div>
-              <div className="flex items-center space-x-2 bg-purple-50 px-3 py-2 rounded-full">
-                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-purple-700 font-medium">Fresher</span>
+              <div className="flex items-center space-x-2 bg-secondary px-3 py-2 rounded-full">
+                <div className="w-2 h-2 bg-secondary-foreground rounded-full animate-pulse"></div>
+                <span className="text-sm text-secondary-foreground font-medium">Fresher</span>
               </div>
-              <div className="flex items-center space-x-2 bg-green-50 px-3 py-2 rounded-full">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-green-700 font-medium">Available Now</span>
+              <div className="flex items-center space-x-2 bg-accent px-3 py-2 rounded-full">
+                <div className="w-2 h-2 bg-accent-foreground rounded-full animate-pulse"></div>
+                <span className="text-sm text-accent-foreground font-medium">Available Now</span>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-4">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <a href="#projects" className="flex items-center">
                 View My Work
@@ -149,9 +149,9 @@ const Hero = () => {
             
             {/* Tech stack floating badges */}
             <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">Python</div>
-              <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">ML</div>
-              <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">AI</div>
+              <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Apache Spark</div>
+              <div className="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-medium">Hugging Face</div>
+              <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">Streamlit</div>
             </div>
           </div>
         </div>
