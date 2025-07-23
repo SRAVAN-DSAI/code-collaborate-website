@@ -12,6 +12,26 @@ const InteractiveProjects = () => {
   const projects = [
     {
       id: 1,
+      title: 'NLP News Article Classification with Hugging Face Transformers',
+      description: 'Advanced sentiment analysis using pre-trained transformers, fine-tuned for domain-specific text classification with 96% accuracy.',
+      longDescription: 'Leveraging BERT and RoBERTa models from Hugging Face, this project implements multi-class sentiment analysis with custom fine-tuning. Features include model comparison, attention visualization, and deployment via REST API.',
+      image: "https://www.searchenginejournal.com/wp-content/uploads/2020/08/an-introduction-to-natural-language-processing-with-python-for-seos-5f3519eeb8368.png?auto=format&fit=crop&q=80&w=1770",
+      technologies: ["Python", "Apache Spark", "PySpark", "Hugging Face Transformers", "PyTorch", "Streamlit", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn"],
+      github: 'https://github.com/SRAVAN-DSAI/nlp_news_classifier',
+      live: 'https://nlp-news-pipeline.streamlit.app/',
+      demo: '#',
+      category: 'NLP',
+      featured: true,
+      icon: Brain,
+      color: 'from-purple-500 to-pink-500',
+      metrics: { accuracy: '96.1%', f1Score: '0.94', inference: '50ms' },
+      tags: ['Transformer', 'Fine-tuned', 'Production'],
+      complexity: 'Advanced',
+      duration: '2 months',
+      team: 'Solo Project'
+    },
+    {
+      id: 2,
       title: 'End-to-End ML Pipeline for Real Estate Prediction',
       description: 'Complete ML pipeline from data ingestion to model deployment using Apache Spark, MLflow, and Streamlit. Features automated retraining and A/B testing.',
       longDescription: 'This project demonstrates a production-ready machine learning pipeline for predicting real estate prices. It includes data ingestion from multiple sources, feature engineering using PySpark, model training with automated hyperparameter tuning, and deployment using FastAPI and Streamlit.',
@@ -28,26 +48,6 @@ const InteractiveProjects = () => {
       tags: ['Production Ready', 'Scalable', 'Real-time'],
       complexity: 'Advanced',
       duration: '3 months',
-      team: 'Solo Project'
-    },
-    {
-      id: 2,
-      title: 'NLP Sentiment Analysis with Hugging Face Transformers',
-      description: 'Advanced sentiment analysis using pre-trained transformers, fine-tuned for domain-specific text classification with 96% accuracy.',
-      longDescription: 'Leveraging BERT and RoBERTa models from Hugging Face, this project implements multi-class sentiment analysis with custom fine-tuning. Features include model comparison, attention visualization, and deployment via REST API.',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
-      technologies: ['Hugging Face', 'PyTorch', 'BERT', 'FastAPI', 'Gradio', 'wandb'],
-      github: 'https://github.com/sravan-dsai/transformer-sentiment',
-      live: '#',
-      demo: '#',
-      category: 'NLP',
-      featured: true,
-      icon: Brain,
-      color: 'from-purple-500 to-pink-500',
-      metrics: { accuracy: '96.1%', f1Score: '0.94', inference: '50ms' },
-      tags: ['Transformer', 'Fine-tuned', 'Production'],
-      complexity: 'Advanced',
-      duration: '2 months',
       team: 'Solo Project'
     },
     {
