@@ -19,7 +19,7 @@ const InteractiveProjects = () => {
       technologies: ["Python", "Apache Spark", "PySpark", "Hugging Face Transformers", "PyTorch", "Streamlit", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn"],
       github: 'https://github.com/SRAVAN-DSAI/nlp_news_classifier',
       live: 'https://nlp-news-pipeline.streamlit.app/',
-      demo: '#',
+      demo: 'https://nlp-news-pipeline.streamlit.app/',
       category: 'NLP',
       featured: true,
       icon: Brain,
