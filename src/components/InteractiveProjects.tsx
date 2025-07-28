@@ -53,7 +53,7 @@ const InteractiveProjects = () => {
     "complexity": "Advanced",
     "duration": "1 week",
     "team": "Solo Project"
-  }
+  },
   ];
 
   const categories = [
