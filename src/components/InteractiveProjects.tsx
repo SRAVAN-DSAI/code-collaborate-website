@@ -17,7 +17,7 @@ const InteractiveProjects = () => {
       longDescription: 'Leveraging BERT and RoBERTa models from Hugging Face, this project implements multi-class sentiment analysis with custom fine-tuning. Features include model comparison, attention visualization, and deployment via REST API.',
       image: "https://www.searchenginejournal.com/wp-content/uploads/2020/08/an-introduction-to-natural-language-processing-with-python-for-seos-5f3519eeb8368.png?auto=format&fit=crop&q=80&w=1770",
       technologies: ["Python", "PyTorch", "Hugging Face Transformers", "Streamlit", "Pandas"],
-      github: 'https://github.com/SRAVAN-DSAI/nlp_news_classifier',
+      github: 'https://github.com/SRAVAN-DSAI/nlp-news-classifier',
       demo: 'https://nlp-news-classifier.streamlit.app/',
       category: 'NLP',
       featured: true,
@@ -26,7 +26,7 @@ const InteractiveProjects = () => {
       metrics: { accuracy: '96.1%', f1Score: '0.94', inference: '50ms' },
       tags: ['Transformer', 'Fine-tuned', 'Production'],
       complexity: 'Advanced',
-      duration: '2 months',
+      duration: '5 days',
       team: 'Solo Project'
     },
     {
