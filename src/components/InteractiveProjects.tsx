@@ -31,29 +31,25 @@ const InteractiveProjects = () => {
       team: 'Solo Project'
     },
     {
-    "id": 2,
-    "title": "UrbanSound8K Audio Classification with PyTorch",
-    "description": "Advanced audio classification using a fine-tuned ResNet18 model, achieving 96.37% accuracy on urban sound detection.",
-    "longDescription": "This project implements a convolutional neural network (ResNet18) fine-tuned with PyTorch to classify audio from the UrbanSound8K dataset into 10 categories. Features include real-time spectrogram generation, batch processing, and deployment via Streamlit, with visualizations using Plotly.",
-    "image": "https://www.researchgate.net/profile/Mohamed-Zakaria-Kurd/publication/355730779/figure/fig2/AS:1112013642583040@1642879088806/Spectrogram-of-an-audio-signal.png",
-    "technologies": ["Python", "PyTorch", "Torchvision", "Librosa", "Streamlit", "Plotly", "Pandas", "Matplotlib", "Azure Machine Learning"],
-    "github": "https://github.com/SRAVAN-DSAI/Sound-Classifier",
-    "live": "https://waveform-classifier.streamlit.app/",
-    "demo": "https://waveform-classifier.streamlit.app/",
-    "category": "Audio Processing",
-    "featured": true,
-    "icon": "🎵",
-    "color": "from-green-500 to-teal-500",
-    "metrics": {
-      "accuracy": "96.37%",
-      "f1Score": "95.80%",
-      "inference": "100ms"
+      id: 2,
+      title: "UrbanSound8K Audio Classification with PyTorch",
+      description: "Advanced audio classification using a fine-tuned ResNet18 model, achieving 96.37% accuracy on urban sound detection.",
+      longDescription: "This project implements a convolutional neural network (ResNet18) fine-tuned with PyTorch to classify audio from the UrbanSound8K dataset into 10 categories. Features include real-time spectrogram generation, batch processing, and deployment via Streamlit, with visualizations using Plotly.",
+      image: "https://www.researchgate.net/profile/Mohamed-Zakaria-Kurd/publication/355730779/figure/fig2/AS:1112013642583040@1642879088806/Spectrogram-of-an-audio-signal.png",
+      technologies: ["Python", "PyTorch", "Torchvision", "Librosa", "Streamlit", "Plotly", "Pandas", "Matplotlib", "Azure Machine Learning"],
+      github: "https://github.com/SRAVAN-DSAI/Sound-Classifier",
+      live: "https://waveform-classifier.streamlit.app/",
+      demo: "https://waveform-classifier.streamlit.app/",
+      category: "Audio Processing",
+      featured: true,
+      icon: "🎵",
+      color: "from-green-500 to-teal-500",
+      metrics: {accuracy: "96.37%",f1Score: "95.80%",inference: "100ms"},
+      tags: ["Audio Classification", "Deep Learning", "Real-time", "Production"],
+      complexity: "Advanced",
+      duration: "1 week",
+      team: "Solo Project"
     },
-    "tags": ["Audio Classification", "Deep Learning", "Real-time", "Production"],
-    "complexity": "Advanced",
-    "duration": "1 week",
-    "team": "Solo Project"
-  },
   ];
 
   const categories = [
