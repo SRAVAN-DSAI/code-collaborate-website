@@ -15,7 +15,7 @@ const InteractiveProjects = () => {
       title: 'NLP News Article Classification with Hugging Face Transformers',
       description: 'Advanced sentiment analysis using pre-trained transformers, fine-tuned for domain-specific text classification with 96% accuracy.',
       longDescription: 'Leveraging BERT and RoBERTa models from Hugging Face, this project implements multi-class sentiment analysis with custom fine-tuning. Features include model comparison, attention visualization, and deployment via REST API.',
-      image: "https://www.searchenginejournal.com/wp-content/uploads/2020/08/an-introduction-to-natural-language-processing-with-python-for-seos-5f3519eeb8368.png?auto=format&fit=crop&q=80&w=1770",
+      image: "https://cdn-uploads.huggingface.co/production/uploads/6290ec00a29097b211b94f0f/IV-nahjZbufzIzGBUP-_e.png?auto=format&fit=crop&q=80&w=1770",
       technologies: ["Python", "PyTorch", "Hugging Face Transformers", "Streamlit", "Pandas"],
       github: 'https://github.com/SRAVAN-DSAI/nlp_news_classifier',
       demo: 'https://nlp-news-classifier.streamlit.app/',
