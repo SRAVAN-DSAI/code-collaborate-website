@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Github, Star, Play, Database, Brain, BarChart3, TrendingUp, Layers, Zap } from 'lucide-react';
+import { ExternalLink, Github, Star, Play, Brain, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -16,9 +16,8 @@ const InteractiveProjects = () => {
       description: 'Advanced sentiment analysis using pre-trained transformers, fine-tuned for domain-specific text classification with 96% accuracy.',
       longDescription: 'Leveraging BERT and RoBERTa models from Hugging Face, this project implements multi-class sentiment analysis with custom fine-tuning. Features include model comparison, attention visualization, and deployment via REST API.',
       image: "https://www.searchenginejournal.com/wp-content/uploads/2020/08/an-introduction-to-natural-language-processing-with-python-for-seos-5f3519eeb8368.png?auto=format&fit=crop&q=80&w=1770",
-      technologies: ["Python", "Apache Spark", "PySpark", "Hugging Face Transformers", "PyTorch", "Streamlit", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn"],
+      technologies: ["Python", "PyTorch", "Hugging Face Transformers", "Streamlit", "Pandas"],
       github: 'https://github.com/SRAVAN-DSAI/nlp_news_classifier',
-      live: 'https://nlp-news-classifier.streamlit.app/',
       demo: 'https://nlp-news-classifier.streamlit.app/',
       category: 'NLP',
       featured: true,
@@ -36,9 +35,8 @@ const InteractiveProjects = () => {
       description: "Advanced audio classification using a fine-tuned ResNet18 model, achieving 96.37% accuracy on urban sound detection.",
       longDescription: "This project implements a convolutional neural network (ResNet18) fine-tuned with PyTorch to classify audio from the UrbanSound8K dataset into 10 categories. Features include real-time spectrogram generation, batch processing, and deployment via Streamlit, with visualizations using Plotly.",
       image: "https://www.researchgate.net/profile/Mohamed-Zakaria-Kurd/publication/355730779/figure/fig2/AS:1112013642583040@1642879088806/Spectrogram-of-an-audio-signal.png",
-      technologies: ["Python", "PyTorch", "Torchvision", "Librosa", "Streamlit", "Plotly", "Pandas", "Matplotlib", "Azure Machine Learning"],
+      technologies: ["Python", "PyTorch", "Librosa", "Streamlit", "Plotly"],
       github: "https://github.com/SRAVAN-DSAI/Sound-Classifier",
-      live: "https://waveform-classifier.streamlit.app/",
       demo: "https://waveform-classifier.streamlit.app/",
       category: "Audio Processing",
       featured: true,
@@ -76,11 +74,10 @@ const InteractiveProjects = () => {
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Interactive Project Portfolio</h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-          Explore my comprehensive ML projects spanning the entire data science pipeline
+          Explore my featured machine learning projects from end-to-end.
         </p>
       </div>
 
-      {/* Enhanced Filter Tabs */}
       <Tabs value={activeFilter} onValueChange={setActiveFilter} className="mb-12">
         <TabsList className="grid w-full grid-cols-3 gap-1 h-auto p-1 bg-gray-100 rounded-xl">
           {categories.map((category) => (
@@ -95,46 +92,121 @@ const InteractiveProjects = () => {
           ))}
         </TabsList>
 
-        <TabsContent value="all" className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                {projects.map((project) => (
-                    <Card 
-                        key={project.id} 
-                        className="group border-0 shadow-lg bg-white/60 backdrop-blur-sm overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
-                        onMouseEnter={() => setHoveredProject(project.id)}
-                        onMouseLeave={() => setHoveredProject(null)}
-                    >
-                         {/* Card content remains the same... */}
-                    </Card>
-                ))}
-            </div>
-        </TabsContent>
-        <TabsContent value="NLP" className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                 {projects.filter(p => p.category === 'NLP').map((project) => (
-                    <Card key={project.id}  className="group border-0 shadow-lg bg-white/60 backdrop-blur-sm overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
-                    onMouseEnter={() => setHoveredProject(project.id)}
-                    onMouseLeave={() => setHoveredProject(null)}>
-                         {/* Card content remains the same... */}
-                    </Card>
-                ))}
-            </div>
-        </TabsContent>
-         <TabsContent value="Audio Processing" className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                 {projects.filter(p => p.category === 'Audio Processing').map((project) => (
-                    <Card key={project.id}  className="group border-0 shadow-lg bg-white/60 backdrop-blur-sm overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
-                    onMouseEnter={() => setHoveredProject(project.id)}
-                    onMouseLeave={() => setHoveredProject(null)}>
-                         {/* Card content remains the same... */}
-                    </Card>
-                ))}
-            </div>
-        </TabsContent>
+        <TabsContent value={activeFilter} className="mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {filteredProjects.map((project) => (
+              <Card 
+                key={project.id} 
+                className="group border-0 shadow-lg bg-white/60 backdrop-blur-sm overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
+                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseLeave={() => setHoveredProject(null)}
+              >
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  
+                  <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-90 transition-all duration-500`}>
+                    <div className="absolute inset-0 bg-black/20"></div>
+                  </div>
+                  
+                  <div className="absolute top-4 left-4 p-2 bg-white/95 backdrop-blur-sm rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <project.icon className="h-5 w-5 text-gray-700" />
+                  </div>
+                  
+                  {project.featured && (
+                    <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center shadow-lg">
+                      <Star className="h-3 w-3 mr-1" />
+                      Featured
+                    </div>
+                  )}
+                  
+                  <div className={`absolute bottom-4 left-4 px-2 py-1 rounded-full text-xs font-medium ${getComplexityColor(project.complexity)} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                    {project.complexity}
+                  </div>
+                  
+                  <div className="absolute bottom-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                    <Button size="sm" variant="secondary" className="bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg" asChild>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4" />
+                      </a>
+                    </Button>
+                    <Button size="sm" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg shadow-lg" asChild>
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <Play className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+                
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="secondary" className={`bg-gradient-to-r ${project.color} text-white border-0 shadow-sm`}>
+                      {project.category}
+                    </Badge>
+                    <div className="flex items-center space-x-1 text-xs text-gray-500">
+                      <span>{project.duration}</span>
+                      <span>•</span>
+                      <span>{project.team}</span>
+                    </div>
+                  </div>
+                  
+                  <CardTitle className="text-lg text-gray-900 group-hover:text-gray-700 transition-colors line-clamp-2 leading-tight">
+                    {project.title}
+                  </CardTitle>
+                  
+                  <CardDescription className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
+                    {hoveredProject === project.id ? project.longDescription : project.description}
+                  </CardDescription>
+                </CardHeader>
 
+                <CardContent className="pt-0 space-y-4">
+                  <div className="grid grid-cols-3 gap-2 text-center bg-gray-50 rounded-lg p-3">
+                    {Object.entries(project.metrics).map(([key, value]) => (
+                      <div key={key} className="flex flex-col">
+                        <span className="text-xs text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+                        <span className="text-sm font-semibold text-gray-900">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                      <Badge 
+                        key={tech} 
+                        variant="outline" 
+                        className="text-xs hover:shadow-md transition-all duration-300 hover:scale-105"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <Badge variant="outline" className="text-xs text-gray-500">
+                        +{project.technologies.length - 4} more
+                      </Badge>
+                    )}
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-1">
+                    {project.tags.map((tag) => (
+                      <Badge 
+                        key={tag} 
+                        variant="secondary" 
+                        className="text-xs bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
       </Tabs>
 
-      {/* Enhanced CTA Section */}
       <div className="text-center mt-16 p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl">
         <h3 className="text-2xl font-bold text-gray-900 mb-4">Interested in Collaboration?</h3>
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
